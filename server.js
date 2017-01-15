@@ -1,24 +1,24 @@
 
-var express = require('express'),
-		app     = express(),
-		port    = 9999,
-		about		= require('./routes/about');
+var express 	= require('express'),
+		app     	= express(),
+		port    	= 9999,
+		products	= require('./routes/products'),			
+		home			= require('./routes/home'),		
+		about			= require('./routes/about');
 
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
-app.use('/about', about);  
+app.use(express.static('public')) ;
 
-// Middelware
 app.use(function(req, res, next) {
   console.log('%s request to %s from %s', req.method, req.path, req.ip);
   next();
 });	
 
-
-app.get('/', function(req, res) {
-    res.render('index');
-});
+app.use('/', home);
+app.use('/about', about);
+app.use('/products', products);
 
 app.listen(process.env.PORT || port, function(){
   console.log("Application listening on port: " + (process.env.PORT || port));
