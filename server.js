@@ -16,7 +16,6 @@ app.use(function(req, res, next) {
   next();
 });	
 
-//routing
 app.use('/', home);
 app.use('/about', about);
 app.use('/products', products);
