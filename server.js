@@ -3,7 +3,8 @@ var express 				= require('express'),
 		app     				= express(),
     http 						= require('http').Server(app),
 		mongoose 				= require('mongoose'),
-    hbs             = require('hbs'),    
+    hbs             = require('hbs'),  
+    hbsutils        = require('hbs-utils')(hbs),
     bodyParser 			= require('body-parser'),
     methodOverride 	= require('method-override'),		
 		homeCtlr			  = require('./controllers/productsController'),
@@ -21,8 +22,11 @@ process.on('exit', function() {
 // allows for put/delete request in html form
 // app.use(methodOverride('_method'));
 
-//handlebars
+//View Engine
 app.set('view engine', 'hbs');
+app.set('views', './views');
+hbs.registerPartials(__dirname + '/views/partials');
+hbsutils.registerWatchedPartials(__dirname + '/views/partials'); // partial changes will restart nodemon
 // register navbar and client partial to be used in all views
 //cwd = current working directory
 // hbs.registerPartial('navbar', fs.readFileSync(process.cwd() + '/views/partials/navbar.hbs', 'utf8'));
