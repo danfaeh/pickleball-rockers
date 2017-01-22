@@ -1,18 +1,18 @@
 
-var express 				= require('express'),
-		app     				= express(),
-    http 						= require('http').Server(app),
-		mongoose 				= require('mongoose'),
+var express 		= require('express'),
+	app    			= express(),
+    http 			= require('http').Server(app),
+	mongoose 		= require('mongoose'),
     hbs             = require('hbs'),  
     hbsutils        = require('hbs-utils')(hbs),
-    bodyParser 			= require('body-parser'),
+    bodyParser 		= require('body-parser'),
     methodOverride 	= require('method-override'),		
-		homeCtlr			  = require('./controllers/productsController'),
+	homeCtlr		= require('./controllers/productsController'),
     fs              = require('fs');
 
 
 // Connect Database
-mongoose.connect('mongodb://localhost/pickle_ball_rockers');
+mongoose.connect('mongodb://localhost/products');
 
 // Shuts down Mongoose correctly on exit
 process.on('exit', function() { 
