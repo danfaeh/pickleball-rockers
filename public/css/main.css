@@ -1,18 +1,39 @@
-body {
+/*body {
     background:green;
-/*    position: relative;
+    position: relative;
     width: 100%;
     min-height: auto;
     text-align: center;
-    color: #fff;*/
-/*    background-image: url(../images/pickleball1.jpg);
+    color: #fff;
+    background-image: url(../images/pickleball1.jpg);
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-    -o-background-size: cover;*/
+    -o-background-size: cover;
+}*/
+
+/*.navbar{
+    background: green;
+}*/
+
+#one{
+    background-image: url(../images/pattern1.png);
+    height: 100vh;
 }
 
-.navbar{
-    background: white;
+#two{
+    background-image: url(../images/pattern2.png);
+    height: 100vh;
+}
+
+#three{
+    background-image: url("https://wallpaperscraft.com/image/yosemite_national_park_lake_rocks_mountains_autumn_nature_96336_3840x2160.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+#mainNav{
+    background-color: rgba(27, 176, 72, 0.5); 
+    margin-bottom: 0;
 }

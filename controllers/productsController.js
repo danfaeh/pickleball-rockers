@@ -3,11 +3,12 @@ var Product = require("../models/product");
 var ProductsController = {
   index: function(req, res) {
     Product.find({}, function(err, docs) {
-      res.render("products/index", {products: docs});
+      console.log("docs",docs);
+      res.render("pages/home", {products: docs});
     });
   },
   new: function(req, res) {
-    res.render("products/new");
+    res.render("pages/products");
   },
   create: function(req, res) {
     // strong params
