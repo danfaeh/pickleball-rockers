@@ -1,31 +1,66 @@
-<nav id="mainNav" class="navbar navbar-default">
-    <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand page-scroll" href="#page-top">PickleBallRockers</a>
-        </div>
+<nav class="navbar-fixed-top">
+  <nav id="socialNav" role="navigation">
+      <div class="container-fluid">
+          <!-- add header -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              {{!-- <a class="navbar-brand" href="#">Pickleball Rockers</a> --}}
+          </div>
+          <!-- menu items -->
+          <div class="collapse navbar-collapse" id="navbar1">
+  {{!--             <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Mens</a></li>
+                  <li><a href="#">Womens</a></li>
+                  <li><a href="#">Kiddies</a></li>
+              </ul> --}}
+              <!-- social media icons -->
+              <ul class="nav navbar-nav navbar-right social-group">
+                  <li><a href="#"><i class="fa social fa-facebook"></i></a></li>
+                  <li><a href="#"><i class="fa social fa-twitter"></i></a></li>
+                  <li><a href="#"><i class="fa social fa-google-plus"></i></a></li>
+                  <li><a href="#"><i class="fa social fa-linkedin"></i></a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a class="page-scroll" href="#skills"><button class="btn btn-default">Shop Now</button></a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#about">About Us</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-</nav>
+  <nav id="mainNav" class="navbar navbar-default">
+      <div class="container-fluid center-links">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand page-scroll" href="/">PickleBallRockers</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right nav-links">
+                  <li>
+                      <a class="page-scroll" href="/">Home</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="/store">Store</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="/about">About Lyndee L. Lindsey</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="/contact">Contact Us</a>
+                  </li>                
+              </ul>
+          </div>
+          <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+  </nav> 
+</nav>    
