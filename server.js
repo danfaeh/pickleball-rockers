@@ -7,7 +7,7 @@ var express 		= require('express'),
     hbsutils        = require('hbs-utils')(hbs),
     bodyParser 		= require('body-parser'),
     methodOverride 	= require('method-override'),		
-	homeCtlr		= require('./controllers/productsController'),
+	mainCtlr		= require('./controllers/mainController'),
     fs              = require('fs');
 
 
@@ -56,8 +56,10 @@ app.use("/public", express.static("public"));
 // });
 
 // CLIENTS ROUTS
-app.get('/', homeCtlr.index);
-app.get('/products', homeCtlr.new);
+app.get('/', mainCtlr.home);
+app.get('/store', mainCtlr.store);
+app.get('/about', mainCtlr.about);
+app.get('/contact', mainCtlr.contact);
 // app.post('/client', ctrl.clients.create);
 // app.get('/clients/:id', ctrl.clients.show);
 // app.delete('/clients/:id', ctrl.clients.destroy);

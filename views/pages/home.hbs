@@ -1,24 +1,45 @@
-<section id="one">
+{{!-- <section id="one"> --}}
 
-  <br><br><br>
+                  <div class="col-sm-offset-2 col-sm-8">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                      <!-- Indicators -->
+{{!--                       <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                      </ol> --}}
 
-  <ul>
-    {{#each products}}
-    {{!-- <h1>header</h1> --}}
-      <li class="product">
-        <a class="product-title" href="/products/{{_id}}">{{name}}:</a>
-        <span class="product-body">{{type}}</span>
-      </li>
-    {{/each}}
-  </ul>
+                      <!-- Wrapper for slides -->
+                      <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                          <img class="slideshow" src="../../public/images/players.jpg">
+                        </div>
 
-</section>
+                       <div class="item">
+                          <img class="slideshow" src="../../public/images/courts2.jpg">
+                        </div>
 
-<section id="two">
+                        <div class="item">
+                          <img class="slideshow" src="../../public/images/courts.jpg">
+                        </div>
+                      </div>
 
-</section>
+                      <!-- Left and right controls -->
+                      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                        {{!-- <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> --}}
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                        {{!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> --}}
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </div>
+                  </div>
 
-<section id="three">
+{{!-- </section> --}}
 
-</section>
+{{!-- <section id="two">
+
+</section> --}}
+
 

@@ -1,24 +1,5 @@
-/*body {
-    background:green;
-    position: relative;
-    width: 100%;
-    min-height: auto;
-    text-align: center;
-    color: #fff;
-    background-image: url(../images/pickleball1.jpg);
-    background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}*/
-
-/*.navbar{
-    background: green;
-}*/
-
 #one{
-    background-image: url(../images/pattern1.png);
+    background-color: white;
     height: 100vh;
 }
 
@@ -27,13 +8,129 @@
     height: 100vh;
 }
 
-#three{
-    background-image: url("https://wallpaperscraft.com/image/yosemite_national_park_lake_rocks_mountains_autumn_nature_96336_3840x2160.jpg");
-    background-size: cover;
-    height: 100vh;
+#mainNav{
+    background-color: white; 
+    margin-bottom: 0;
+    height: 7em;
 }
 
-#mainNav{
-    background-color: rgba(27, 176, 72, 0.5); 
+#socialNav{
+    background-color: rgba(167, 230, 118, 1);  
     margin-bottom: 0;
+    border: none;
+    max-height: 2.4em;
 }
+
+.nav-links{
+    margin: 0 4.4em 0 0;
+}
+
+.navbar-brand{
+    padding-left: 4.7em;
+}
+
+.social-group{
+    /*margin-top: -0.6em;*/
+    margin: -0.6em 4.4em 0 0;
+}
+
+.center-links{
+   padding-top: 1.5em;
+}
+
+#page-content{
+    margin-top:12em;
+}
+
+.drawing {
+    height: 8em;
+}
+
+#myCarousel {
+    position: relative; 
+}
+
+/*--------------------shop css---------------------*/
+
+.thumbnail a>img, 
+.thumbnail>img {
+    height: 20em;
+}
+
+.glyphicon{ 
+    margin-right:5px; 
+}
+
+.thumbnail{
+    margin-bottom: 20px;
+    padding: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.item.list-group-item{
+    float: none;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover{
+    background: #428bca;
+}
+
+.item.list-group-item .list-group-image{
+    margin-right: 10px;
+}
+
+.item.list-group-item .thumbnail{
+    margin-bottom: 0px;
+}
+
+.item.list-group-item .caption{
+    padding: 9px 9px 0px 9px;
+}
+
+.item.list-group-item:nth-of-type(odd){
+    background: #eeeeee;
+}
+
+
+.item.list-group-item:before, .item.list-group-item:after{
+    display: table;
+    content: " ";
+}
+
+
+.item.list-group-item img{
+    float: left;
+}
+
+.item.list-group-item:after{
+    clear: both;
+}
+
+.list-group-item-text{
+    margin: 0 0 11px;
+}
+
+/*--------------------Shop css---------------------*/
+/*--------------------Contact css---------------------*/
+
+.jumbotron {
+background: #358CCE;
+color: #FFF;
+border-radius: 0px;
+}
+.jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+}
+
+/*--------------------Contact css---------------------*/
+
