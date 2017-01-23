@@ -1,0 +1,9 @@
+  <ul>
+    {{#each products}}
+    {{!-- <h1>header</h1> --}}
+      <li class="product">
+        <a class="product-title" href="/products/{{_id}}">{{name}}:</a>
+        <span class="product-body">{{type}}</span>
+      </li>
+    {{/each}}
+  </ul>

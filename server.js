@@ -1,18 +1,18 @@
 
-var express 				= require('express'),
-		app     				= express(),
-    http 						= require('http').Server(app),
-		mongoose 				= require('mongoose'),
+var express 		= require('express'),
+	app    			= express(),
+    http 			= require('http').Server(app),
+	mongoose 		= require('mongoose'),
     hbs             = require('hbs'),  
     hbsutils        = require('hbs-utils')(hbs),
-    bodyParser 			= require('body-parser'),
+    bodyParser 		= require('body-parser'),
     methodOverride 	= require('method-override'),		
-		homeCtlr			  = require('./controllers/productsController'),
+	mainCtlr		= require('./controllers/mainController'),
     fs              = require('fs');
 
 
 // Connect Database
-mongoose.connect('mongodb://localhost/pickle_ball_rockers');
+mongoose.connect('mongodb://localhost/products');
 
 // Shuts down Mongoose correctly on exit
 process.on('exit', function() { 
@@ -56,8 +56,10 @@ app.use("/public", express.static("public"));
 // });
 
 // CLIENTS ROUTS
-app.get('/', homeCtlr.index);
-app.get('/products', homeCtlr.new);
+app.get('/', mainCtlr.home);
+app.get('/store', mainCtlr.store);
+app.get('/about', mainCtlr.about);
+app.get('/contact', mainCtlr.contact);
 // app.post('/client', ctrl.clients.create);
 // app.get('/clients/:id', ctrl.clients.show);
 // app.delete('/clients/:id', ctrl.clients.destroy);
