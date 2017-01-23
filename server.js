@@ -12,7 +12,7 @@ var express 		= require('express'),
 
 
 // Connect Database
-mongoose.connect('mongodb://localhost/products');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/products');
 
 // Shuts down Mongoose correctly on exit
 process.on('exit', function() { 
