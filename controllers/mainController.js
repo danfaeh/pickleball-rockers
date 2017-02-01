@@ -1,6 +1,9 @@
 var Product = require("../models/product");
 
 var MainController = {
+  auth: function(req, res) {
+      res.render("pages/auth");
+  },  
   home: function(req, res) {
       res.render("pages/home");
   },

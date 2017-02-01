@@ -56,7 +56,8 @@ app.use("/public", express.static("public"));
 // });
 
 // CLIENTS ROUTS
-app.get('/', mainCtlr.home);
+app.get('/', mainCtlr.auth);
+app.get('/home', mainCtlr.home);
 app.get('/store', mainCtlr.store);
 app.get('/about', mainCtlr.about);
 app.get('/contact', mainCtlr.contact);
