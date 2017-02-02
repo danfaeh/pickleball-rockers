@@ -14,7 +14,7 @@ $(function(){
   $('#admin').click(function(){
     if ($('#password').val() === "dunedin"){
       document.cookie = "login=true;path=/";
-      window.location.href = "/home";
+      window.location.href = "/";
     } else {
       $('#error').show();
     }
