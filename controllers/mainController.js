@@ -1,16 +1,31 @@
 var Product = require("../models/product");
 
 var MainController = {
+  auth: function(req, res) {
+        res.render("pages/auth");
+  },
   home: function(req, res) {
-      res.render("pages/home");
+      if(req.headers.cookie === "dunedin"){
+        res.render("pages/home");
+      } else{
+        res.render("pages/auth");
+      }
   },
   store: function(req, res) {
-    Product.find({}, function(err, items) {
-      res.render("pages/store", {products: items});
-    });    
+      if(req.headers.cookie === "dunedin"){
+        Product.find({}, function(err, items) {
+          res.render("pages/store", {products: items});
+        });  
+      } else{
+        res.render("pages/auth");
+      }
   },
   contact: function(req, res) {
-    res.render("pages/contact");
+      if(req.headers.cookie === "dunedin"){
+        res.render("pages/contact");
+      } else{
+        res.render("pages/auth");
+      }    
   },
   create: function(req, res) {
     // strong params

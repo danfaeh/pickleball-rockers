@@ -12,12 +12,20 @@ $(function(){
   }
 
   $('#admin').click(function(){
-    if ($('#password').val() === "dunedin"){
-      document.cookie = "login=true;path=/";
-      window.location.href = "/";
-    } else {
-      $('#error').show();
-    }
+    var pass = $('#password').val();
+    $.ajax({
+      type: "POST",
+      url: "/auth",
+      data: {"pass": pass},
+      success: function(data) { 
+        if(data){
+          document.cookie = pass;
+          window.reload();
+        } else {
+          window.location.href = "/";
+        }  
+      }
+    });    
   });
 
 

@@ -59,6 +59,10 @@ app.use("/public", express.static("public"));
 app.get('/', mainCtlr.home);
 app.get('/store', mainCtlr.store);
 app.get('/contact', mainCtlr.contact);
+app.post('/auth', function(req,res){
+    //console.log("req",req);
+    res.send((req.body.pass === 'dunedin'));
+});
 // app.post('/client', ctrl.clients.create);
 // app.get('/clients/:id', ctrl.clients.show);
 // app.delete('/clients/:id', ctrl.clients.destroy);
