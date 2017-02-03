@@ -59,6 +59,7 @@ app.use("/public", express.static("public"));
 app.get('/', mainCtlr.home);
 app.get('/store', mainCtlr.store);
 app.get('/contact', mainCtlr.contact);
+app.get('/auth', mainCtlr.auth);
 app.post('/auth', function(req,res){
     //console.log("req",req);
     res.send((req.body.pass === 'dunedin'));

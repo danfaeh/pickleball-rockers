@@ -8,7 +8,7 @@ var MainController = {
       if(req.headers.cookie === "dunedin"){
         res.render("pages/home");
       } else{
-        res.render("pages/auth");
+        res.redirect("/auth");
       }
   },
   store: function(req, res) {
@@ -17,14 +17,14 @@ var MainController = {
           res.render("pages/store", {products: items});
         });  
       } else{
-        res.render("pages/auth");
+        res.redirect("/auth");
       }
   },
   contact: function(req, res) {
       if(req.headers.cookie === "dunedin"){
         res.render("pages/contact");
       } else{
-        res.render("pages/auth");
+        res.redirect("/auth");
       }    
   },
   create: function(req, res) {
