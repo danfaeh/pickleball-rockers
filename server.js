@@ -8,6 +8,8 @@ var express 		= require('express'),
     bodyParser 		= require('body-parser'),
     methodOverride 	= require('method-override'),		
 	mainCtlr		= require('./controllers/mainController'),
+    emailCtlr       = require('./controllers/emailController'), 
+    userCtlr        = require('./controllers/userController'),
     fs              = require('fs');
 
 
@@ -59,6 +61,10 @@ app.use("/public", express.static("public"));
 app.get('/', mainCtlr.home);
 app.get('/store', mainCtlr.store);
 app.get('/contact', mainCtlr.contact);
+app.post('/contact', emailCtlr.sendemail);
+
+app.get('/login', userCtlr.login);
+
 app.get('/auth', mainCtlr.auth);
 app.post('/auth', function(req,res){
     //console.log("req",req);

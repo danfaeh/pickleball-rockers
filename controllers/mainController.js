@@ -27,6 +27,10 @@ var MainController = {
         res.redirect("/auth");
       }    
   },
+  sendemail: function(req, res) {
+    console.log("req",req); 
+    res.redirect("/contact");
+  },  
   create: function(req, res) {
     // strong params
     var name = req.body.name;
