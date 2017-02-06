@@ -12,8 +12,13 @@ var LocalStrategy = require('passport-local').Strategy;
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/pickleballrockers');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pickleballrockers');
 var db = mongoose.connection;
+
+// Shuts down Mongoose correctly on exit
+// process.on('exit', function() { 
+//   mongoose.disconnect();
+// }); 
 
 var pages = require('./routes/pages');
 var contact = require('./routes/contact');
