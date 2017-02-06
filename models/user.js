@@ -1,13 +1,49 @@
-// requiring mongoose dependency
 var mongoose = require('mongoose');
+var bcrypt = require('bcryptjs');
 
-// defining schema for reminders
-var UserSchema = new mongoose.Schema({
-  email: String,
-  password: String,
-  createdAt: { type : Date, default: new Date() }
+// mongoose.connect('mongodb://localhost/pickleballrockers');
+// var db = mongoose.connection;
+
+// User Schema
+var UserSchema = mongoose.Schema({
+  username: {
+    type: String,
+    index:true
+  },
+  password: {
+    type: String
+  },
+  email: {
+    type: String
+  },
+  name: {
+    type: String
+  }
 });
-// define the model
-var User = mongoose.model("User", UserSchema);
-// export the model to any files that `require` this one
-module.exports = User;
+
+var User = module.exports = mongoose.model('User', UserSchema);
+
+module.exports.createUser = function(newUser, callback){
+  bcrypt.genSalt(10, function(err, salt) {
+      bcrypt.hash(newUser.password, salt, function(err, hash) {
+          newUser.password = hash;
+          newUser.save(callback);
+      });
+  });
+};
+
+module.exports.getUserByUsername = function(username, callback){
+  var query = {username: username};
+  User.findOne(query, callback);
+};
+
+module.exports.getUserById = function(id, callback){
+  User.findById(id, callback);
+};
+
+module.exports.comparePassword = function(candidatePassword, hash, callback){
+  bcrypt.compare(candidatePassword, hash, function(err, isMatch) {
+      if(err) throw err;
+      callback(null, isMatch);
+  });
+};

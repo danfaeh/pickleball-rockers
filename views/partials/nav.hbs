@@ -53,7 +53,22 @@
                   </li>
                   <li>
                       <a class="page-scroll" href="/contact">Contact Us</a>
-                  </li>                
+                  </li> 
+                  {{#if user}}               
+                  <li>
+                      <a class="page-scroll" href="/users/account">My Account</a>
+                  </li>   
+                  <li>
+                      <a class="page-scroll" href="/users/logout">Logout</a>
+                  </li>  
+                  {{else}}
+                  <li>
+                      <a class="page-scroll" href="/users/login">Login</a>
+                  </li>
+                  <li>
+                      <a class="page-scroll" href="/users/register">Create Account</a>
+                  </li>
+                  {{/if}}                                               
               </ul>
           </div>
           <!-- /.navbar-collapse -->

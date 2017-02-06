@@ -1,23 +1,33 @@
 {
-  "name": "PickleBallRockers",
+  "name": "pickleballrockers",
   "version": "1.0.0",
-  "description": "A place for all your PickleBall needs",
-  "main": "server.js",
+  "description": "place to buy great pickleball gear",
+  "main": "app.js",
   "scripts": {
+    "start": "node app.js",    
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [
+    "pickleball"
+  ],
+  "author": "Daniel Faeh",
   "license": "ISC",
-  "engines": {
-    "node": "6.3.1"
-  },
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "connect-flash": "*",
+    "cookie-parser": "^1.4.1",
     "hbs": "^4.0.1",
-    "hbs-utils": "0.0.4",
-    "method-override": "^2.3.7",
-    "mongoose": "^4.7.7",
-    "nodemailer": "^3.0.2"
+    "hbs-utils": "0.0.4",    
+    "express": "*",
+    "express-messages": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "nodemailer": "^3.0.2",    
+    "mongodb": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*"
   }
 }
