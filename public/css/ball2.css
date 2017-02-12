@@ -52,7 +52,7 @@
   -moz-animation: jump 1s infinite;
   -o-animation: jump 1s infinite;
   -ms-animation: jump 1s infinite;
-  animation: jump 1s infinite;
+  animation: jump 3s infinite;
   cursor: pointer;
 }
 
@@ -191,31 +191,59 @@
 @keyframes jump {
   0% {
     top: 0;
+    left: -500%;
     animation-timing-function: ease-in;
   }
+  10% {
+    animation-timing-function: ease-in;
+  }
+  20% {
+    animation-timing-function: ease-in;
+  }  
+  30% {
+    top: 35px;    
+    animation-timing-function: ease-in;
+  }
+  40% {
+    animation-timing-function: ease-in;
+  }     
   50% {
     top: 140px;
     height: 140px;
     animation-timing-function: ease-out;
   }
   55% {
-    top: 160px; 
+    top: 160px;
+    left: 0%;    
     height: 120px; 
     border-radius: 70px / 60px;
     animation-timing-function: ease-in;
   }
+  60% {
+    animation-timing-function: ease-in;
+  }    
   65% {
-    top: 120px; 
+    top: 120px;
     height: 140px; 
     border-radius: 70px;
     animation-timing-function: ease-out;
   }
+  70% {
+    animation-timing-function: ease-in;
+  }  
+  80% {
+    animation-timing-function: ease-in;
+  }  
+  90% {
+    animation-timing-function: ease-in;
+  }        
   95% {
-    top: 0;   
+    top: 0;
     animation-timing-function: ease-in;
   }
   100% {
     top: 0;
+    left: 500%;
     animation-timing-function: ease-in;
   }
 }
