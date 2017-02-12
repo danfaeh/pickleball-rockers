@@ -1,18 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-// Auth
-router.get('/auth', function(req, res){
-  res.render('auth');
-});
-
-// Get Homepage
-router.get('/', ensureAuthenticated, function(req, res){
-  res.render('home');
-});
-
-router.post('/auth', function(req,res){
-    res.send((req.body.pass === 'dunedin'));
+// Get Store
+router.get('/store', ensureAuthenticated, function(req, res){
+  res.render('store');
 });
 
 // function ensureAuthenticated(req, res, next){
