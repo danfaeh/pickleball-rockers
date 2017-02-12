@@ -190,7 +190,7 @@
 
 @keyframes jump {
   0% {
-    top: 0;
+    top: -100px;
     left: -500%;
     animation-timing-function: ease-in;
   }
@@ -201,7 +201,7 @@
     animation-timing-function: ease-in;
   }  
   30% {
-    top: 35px;    
+    top: -50px;            
     animation-timing-function: ease-in;
   }
   40% {
@@ -238,11 +238,11 @@
     animation-timing-function: ease-in;
   }        
   95% {
-    top: 0;
+    top: -50px;
     animation-timing-function: ease-in;
   }
   100% {
-    top: 0;
+    top: -60px;
     left: 500%;
     animation-timing-function: ease-in;
   }
