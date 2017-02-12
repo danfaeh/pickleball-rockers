@@ -22,6 +22,7 @@ var db = mongoose.connection;
 
 var pages = require('./routes/pages');
 var contact = require('./routes/contact');
+var store = require('./routes/store');
 var users = require('./routes/users');
 
 // Init App
@@ -85,8 +86,9 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/', contact);
 app.use('/', pages);
+app.use('/', contact);
+app.use('/', store);
 app.use('/users', users);
 
 // Set Port
