@@ -6,6 +6,10 @@ router.get('/store', ensureAuthenticated, function(req, res){
   res.render('store');
 });
 
+router.get('/cart', ensureAuthenticated, function(req, res){
+  res.render('cart');
+});
+
 // function ensureAuthenticated(req, res, next){
 //   if(req.isAuthenticated()){
 //     return next();
