@@ -1,13 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-// Get Store
-router.get('/store', ensureAuthenticated, function(req, res){
-  res.render('store');
+// Get products
+router.get('/', ensureAuthenticated, function(req, res){
+  res.render('products/allproducts');
 });
 
-router.get('/cart', ensureAuthenticated, function(req, res){
-  res.render('cart');
+router.get('/:productId', ensureAuthenticated, function(req, res){
+  res.render('products/singleproduct');
 });
 
 // function ensureAuthenticated(req, res, next){

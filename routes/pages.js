@@ -11,6 +11,10 @@ router.get('/', ensureAuthenticated, function(req, res){
   res.render('home');
 });
 
+router.get('/cart', ensureAuthenticated, function(req, res){
+  res.render('cart');
+});
+
 router.post('/auth', function(req,res){
     res.send((req.body.pass === 'dunedin'));
 });
