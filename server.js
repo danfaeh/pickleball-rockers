@@ -13,7 +13,7 @@ var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pickleballrockers');
-var db = mongoose.connection;
+var db = mongoose.connect;
 
 // Shuts down Mongoose correctly on exit
 // process.on('exit', function() { 

@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var conn = mongoose.connect('mongodb://localhost/pickleballrockers');
+var conn = mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/pickleballrockers');
 var Product = require("../models/product");
 
 Product.remove({}, function(err) {
