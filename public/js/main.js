@@ -3,7 +3,7 @@ $('#error').hide();
 
 $(function(){ 
 
-  $('#headlineTop').arctext({radius: 300});
+  // $('#headlineTop').arctext({radius: 300});
 
   $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
   $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
@@ -18,6 +18,7 @@ $(function(){
         if(data){
           document.cookie = pass;
           window.location.href = "/";
+          console.log("dunedin rocks!");
         } else {
           $('#error').show();
         }  

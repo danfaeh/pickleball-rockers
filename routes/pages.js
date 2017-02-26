@@ -21,7 +21,7 @@ router.get('/cart', ensureAuthenticated, function(req, res){
 });
 
 router.post('/auth', function(req,res){
-    res.send((req.body.pass === 'dunedin'));
+  res.send((req.body.pass === 'dunedin'));
 });
 
 // function ensureAuthenticated(req, res, next){
