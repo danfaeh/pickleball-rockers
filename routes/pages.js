@@ -12,8 +12,8 @@ router.get('/', ensureAuthenticated, function(req, res){
   res.render('home');
 });
 
-router.get('/styles', ensureAuthenticated, function(req, res){
-  res.render('styles');
+router.get('/logos', ensureAuthenticated, function(req, res){
+  res.render('logos');
 });
 
 router.get('/cart', ensureAuthenticated, function(req, res){

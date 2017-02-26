@@ -1,3 +1,21 @@
+#homeBackdrop{
+    background-color: black;
+    height: 85vh;
+    margin-top: -3em;
+}
+
+#headlineTop{
+    color: white;
+    top: 1em;
+    position: relative;    
+}
+
+#headlineBottom{
+    color: white;
+    top: 28em;
+    position: relative;    
+}
+
 #mainNav{
     background-color: white; 
     margin-bottom: 0;
@@ -28,9 +46,8 @@
    padding-top: 1.5em;
 }
 
-#page-content{
+.page-content{
     margin-top:12em;
-    background-color: black;
 }
 
 .drawing {

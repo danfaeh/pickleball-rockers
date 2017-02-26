@@ -1,5 +1,7 @@
   {{> nav}}
 
+<div class="container">
+
     <div class="well well-sm">
         <strong>All Products</strong>
         <div class="btn-group">
@@ -18,7 +20,7 @@
             <div class="item  col-xs-4 col-lg-4">
                 <div class="thumbnail">
                     <a href="/products/{{name}}">
-                        <img class="group list-group-image" src="../public/images/{{imageURL}}" alt="" />
+                        <img class="group list-group-image" src="../public/images/products/{{imageURL}}" alt="" />
                     </a>
                     <div class="caption">
                         <h4 class="group inner list-group-item-heading">
@@ -40,6 +42,8 @@
         {{/each}}
 
     </div>
+    
+</div>
 
 
     {{!-- http://placehold.it/400x250/000/fff --}}
