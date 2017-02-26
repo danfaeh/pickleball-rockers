@@ -1,13 +1,20 @@
 var express = require('express');
 var router = express.Router();
+var Product = require('../models/product.js');
+
 
 // Get products
 router.get('/', ensureAuthenticated, function(req, res){
-  res.render('products/allproducts');
+  Product.find({}, function(err, products) {
+    res.render('products/allproducts', {products: products});
+  });  
 });
 
 router.get('/:productId', ensureAuthenticated, function(req, res){
-  res.render('products/singleproduct');
+  var name = req.params.productId;
+  Product.find({name:name}, function(err, product) {
+    res.render('products/product', {product: product});
+  });
 });
 
 // function ensureAuthenticated(req, res, next){
