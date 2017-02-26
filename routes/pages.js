@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var Product = require('../models/product.js');
 
 // Auth
 router.get('/auth', function(req, res){
@@ -9,6 +10,10 @@ router.get('/auth', function(req, res){
 // Get Homepage
 router.get('/', ensureAuthenticated, function(req, res){
   res.render('home');
+});
+
+router.get('/styles', ensureAuthenticated, function(req, res){
+  res.render('styles');
 });
 
 router.get('/cart', ensureAuthenticated, function(req, res){

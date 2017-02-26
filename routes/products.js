@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var Product = require('../models/product.js');
 
-
 // Get products
 router.get('/', ensureAuthenticated, function(req, res){
   Product.find({}, function(err, products) {
