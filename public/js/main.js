@@ -10,20 +10,24 @@ $(function(){
 
   $('#admin').click(function(){
     var pass = $('#password').val();
-    $.ajax({
-      type: "POST",
-      url: "/auth",
-      data: {"pass": pass},
-      success: function(data) { 
-        if(data){
-          document.cookie = pass;
-          window.location.href = "/";
-          console.log("dunedin rocks!");
-        } else {
-          $('#error').show();
-        }  
-      }
-    });    
+    if(pass === "dunedin"){
+      document.cookie = pass;
+      window.location.href = "/";
+    }
+    // $.ajax({
+    //   type: "POST",
+    //   url: "/auth",
+    //   data: {"pass": pass},
+    //   success: function(data) { 
+    //     if(data){
+    //       document.cookie = pass;
+    //       window.location.href = "/";
+    //       console.log("dunedin rocks!");
+    //     } else {
+    //       $('#error').show();
+    //     }  
+    //   }
+    // });    
   });
 
 
