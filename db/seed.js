@@ -10,6 +10,33 @@ Product.remove({}, function(err) {
 
 var Products = [
   {
+    name: "rockers-blue-shirt",
+    title: "Pickleball Rockers Blue Shirt",
+    description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+    price: 21.99,
+    available: true,
+    category: "shirt",
+    imageURL: "/blueShirt.jpg"
+  },
+  {
+    name: "rockers-yellow-shirt",
+    title: "Pickleball Rockers Yellow Shirt",
+    description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+    price: 21.99,
+    available: true,
+    category: "shirt",
+    imageURL: "/yellowShirt.jpg"
+  },
+  {
+    name: "rockers-grey-shirt",
+    title: "Pickleball Rockers Grey Shirt",
+    description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+    price: 21.99,
+    available: true,
+    category: "shirt",
+    imageURL: "/greyShirt.jpg"
+  },
+  {
     name: "lover-white-crew-drifit",
     title: "Pickleball Lover Dri-FIT Shirt",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
