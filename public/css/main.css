@@ -123,6 +123,21 @@
     margin: 0 0 11px;
 }
 
+.about-img{
+    margin: 0 auto;
+    max-width: 35% !important;
+}
+
+.about-content{
+    padding: 0 3em;
+}
+
+.about-btn{
+    bottom: 1em;
+    left: -0.5em;
+    position: relative;
+}
+
 /*--------------------Shop css---------------------*/
 /*--------------------Contact css---------------------*/
 

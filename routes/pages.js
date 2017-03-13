@@ -12,6 +12,10 @@ router.get('/', ensureAuthenticated, function(req, res){
   res.render('home');
 });
 
+router.get('/about', ensureAuthenticated, function(req, res){
+  res.render('about');
+});
+
 router.get('/logos', ensureAuthenticated, function(req, res){
   res.render('logos');
 });
