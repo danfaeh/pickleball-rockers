@@ -8,6 +8,7 @@ $(function(){
   $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
   $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
 
+  //Development Auth Page
   $('#admin').click(function(e){
     e.preventDefault();
     var pass = $('#password').val();
@@ -26,6 +27,13 @@ $(function(){
       }
     });    
   });
+
+  function addToCart(id,quantity){
+    document.cookie = {
+      id: id,
+      quantity: quantity
+    };
+  }
 
 
 });
