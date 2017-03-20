@@ -10,8 +10,8 @@ router.get('/', ensureAuthenticated, function(req, res){
 });
 
 router.get('/:productId', ensureAuthenticated, function(req, res){
-  var name = req.params.productId;
-  Product.find({name:name}, function(err, product) {
+  var id = req.params.productId;
+  Product.find({id:id}, function(err, product) {
     res.render('products/product', {product: product});
   });
 });

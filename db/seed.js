@@ -10,8 +10,8 @@ Product.remove({}, function(err) {
 
 var Products = [
   {
-    name: "rockers-blue-shirt",
-    title: "Pickleball Rockers Blue Shirt",
+    id: "rockers-blue-shirt",
+    name: "Pickleball Rockers Blue Shirt",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
@@ -19,8 +19,8 @@ var Products = [
     imageURL: "/blueShirt.jpg"
   },
   {
-    name: "rockers-yellow-shirt",
-    title: "Pickleball Rockers Yellow Shirt",
+    id: "rockers-yellow-shirt",
+    name: "Pickleball Rockers Yellow Shirt",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
@@ -28,8 +28,8 @@ var Products = [
     imageURL: "/yellowShirt.jpg"
   },
   {
-    name: "rockers-grey-shirt",
-    title: "Pickleball Rockers Grey Shirt",
+    id: "rockers-grey-shirt",
+    name: "Pickleball Rockers Grey Shirt",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
@@ -37,8 +37,8 @@ var Products = [
     imageURL: "/greyShirt.jpg"
   },
   {
-    name: "lover-white-crew-drifit",
-    title: "Pickleball Lover Dri-FIT Shirt",
+    id: "lover-white-crew-drifit",
+    name: "Pickleball Lover Dri-FIT Shirt",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
@@ -46,8 +46,8 @@ var Products = [
     imageURL: "/loverShirt.png"
   },
   {
-    name: "rockers-white-crew-drifit",
-    title: "Pickleball Rockers Dri-FIT Shirt",
+    id: "rockers-white-crew-drifit",
+    name: "Pickleball Rockers Dri-FIT Shirt",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
@@ -55,8 +55,8 @@ var Products = [
     imageURL: "/rockersShirt.png"
   },
   {
-    name: "paddle-pickleball-rockers",
-    title: "Pickleball Rockers Paddle",
+    id: "paddle-pickleball-rockers",
+    name: "Pickleball Rockers Paddle",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 31.99,
     available: true,
@@ -64,8 +64,8 @@ var Products = [
     imageURL: "/rockersPaddle.jpg"
   },
   {
-    name: "paddle-pickleball-lover",
-    title: "Pickleball Lover Paddle",
+    id: "paddle-pickleball-lover",
+    name: "Pickleball Lover Paddle",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 31.99,
     available: true,
@@ -73,8 +73,8 @@ var Products = [
     imageURL: "/loverPaddle.jpg"
   },   
   {
-    name: "all-jewelry",
-    title: "Jewelry Set",
+    id: "all-jewelry",
+    name: "Jewelry Set",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
@@ -82,8 +82,8 @@ var Products = [
     imageURL: "/allJewelry.jpg"
   },
   {
-    name: "bracelet",
-    title: "Bracelet",
+    id: "bracelet",
+    name: "Bracelet",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
@@ -91,8 +91,8 @@ var Products = [
     imageURL: "/bracelet.jpg"
   },
   {
-    name: "earings-1",
-    title: "Earings1",
+    id: "earings-1",
+    name: "Earings1",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
@@ -100,8 +100,8 @@ var Products = [
     imageURL: "/earings1.jpg"
   },
   {
-    name: "earings-2",
-    title: "Earings2",
+    id: "earings-2",
+    name: "Earings2",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
@@ -109,8 +109,8 @@ var Products = [
     imageURL: "/earings2.jpg"
   },
   {
-    name: "money-clip-1",
-    title: "Money Clip 1",
+    id: "money-clip-1",
+    name: "Money Clip 1",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
@@ -118,8 +118,8 @@ var Products = [
     imageURL: "/moneyClip1.jpg"
   },
   {
-    name: "money-clip-2",
-    title: "Money Clip 2",
+    id: "money-clip-2",
+    name: "Money Clip 2",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
@@ -127,8 +127,8 @@ var Products = [
     imageURL: "/moneyClip2.jpg"
   },
   {
-    name: "money-clip-3",
-    title: "Money Clip 3",
+    id: "money-clip-3",
+    name: "Money Clip 3",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
