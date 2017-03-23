@@ -183,3 +183,8 @@ font-size: 24px;
 .page-header{
     margin-top: 0;
 }
+
+#viewProducts{
+    display: table;
+    margin: 0 auto;
+}

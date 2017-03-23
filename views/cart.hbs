@@ -3,7 +3,12 @@
 <div class="container">
     <h2 class="page-header">My Cart</h2>
 
-    <div class="row">
+    <div id="emptyCart" style="display:none;">
+        <h4 class="text-center">Your cart is empty</h4>
+        <a href="/products" class="btn btn-default" id="viewProducts" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>View Products</a>  
+    </div>
+
+    <div class="row" id="cartTable" style="display:none;">
         <div class="col-sm-12 col-md-10 col-md-offset-1">
             <table class="table table-hover">
                 <thead>
@@ -44,7 +49,7 @@
                         <td>
                         <a href="/products" class="btn btn-default" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Continue Shopping</a></td>
                         <td>                        
-                        <button type="button" onclick="test123()" class="btn btn-success">
+                        <button type="button" onclick="test123()" class="btn btn-success" id="paypal-button">
                             Checkout <span class="glyphicon glyphicon-play"></span>
                         </button></td>
                     </tr>
@@ -54,4 +59,4 @@
     </div>
 </div>
 
-
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
