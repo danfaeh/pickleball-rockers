@@ -6,7 +6,7 @@ $('#itemAddText').hide();
 //                    Cart Updates                       //
 //*******************************************************//
 
-updateNavItems();
+// updateNavItems();
 
 function test123(){
   alert(">>>>Paypal Checkout Integration Goes Here<<<<");
@@ -64,7 +64,6 @@ $(function(){
         if(data){
           document.cookie = pass;
           window.location.href = "/";
-          console.log("dunedin rocks!");
         } else {
           $('#error').show();
         }  
