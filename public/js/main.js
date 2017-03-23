@@ -6,7 +6,7 @@ $('#itemAddText').hide();
 //                    Cart Updates                       //
 //*******************************************************//
 
-// updateNavItems();
+updateNavItems();
 
 function test123(){
   alert(">>>>Paypal Checkout Integration Goes Here<<<<");
@@ -35,7 +35,7 @@ function updateNavItems(){
     var lineItemQuantity = parseInt(JSON.parse(window.localStorage.getItem(lineItem)).quantity);
     cartQuantity = cartQuantity + lineItemQuantity;
   }
-  //Updated cartQuantity in Nav
+  //Updated cartQuantity on Nav
   $('#navCartItems')[0].textContent = " "+ cartQuantity + " Items";
 }
 
