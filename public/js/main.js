@@ -36,7 +36,9 @@ function updateNavItems(){
     cartQuantity = cartQuantity + lineItemQuantity;
   }
   //Updated cartQuantity on Nav
-  $('#navCartItems')[0].textContent = " "+ cartQuantity + " Items";
+  if(window.location.href.indexOf("auth") === -1){  
+    $('#navCartItems')[0].textContent = " "+ cartQuantity + " Items";
+  }  
 }
 
 //*******************************************************//
