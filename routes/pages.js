@@ -28,6 +28,10 @@ router.get('/cart', ensureAuthenticated, function(req, res){
   res.render('cart');
 });
 
+router.get('/confirmation', ensureAuthenticated, function(req, res){
+  res.render('confirmation');
+});
+
 router.post('/auth', function(req,res){
   res.send((req.body.pass === 'dunedin'));
 });
