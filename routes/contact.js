@@ -23,8 +23,8 @@ router.post('/contact', function(req,res){
   // setup email data with unicode symbols
   var mailOptions = {
       from: form.name+" <"+ form.customerEmail + ">",
-      // to: 'pickleballrockers@tampabay.rr.com', // list of receivers      
-      to: 'danfaeh@gmail.com', // list of receivers
+      to: 'pickleballrockers@tampabay.rr.com', // list of receivers      
+      // to: 'danfaeh@gmail.com', // list of receivers
       subject: 'Message From PickleBallRockers.com', // Subject line
       // text: req.body.message + " my email address is: " + form.customerEmail // plain text body
       html: '<p>'+ form.message +'</p><p>Customer email: '+form.customerEmail+'</p>' // html body
