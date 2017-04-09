@@ -8,27 +8,27 @@ router.get('/auth', function(req, res){
 });
 
 // Get Homepage
-router.get('/', ensureAuthenticated, function(req, res){
+router.get('/', function(req, res){
   res.render('home');
 });
 
-router.get('/test', ensureAuthenticated, function(req, res){
+router.get('/test', function(req, res){
   res.render('test');
 });
 
-router.get('/about', ensureAuthenticated, function(req, res){
+router.get('/about', function(req, res){
   res.render('about');
 });
 
-router.get('/logos', ensureAuthenticated, function(req, res){
+router.get('/logos', function(req, res){
   res.render('logos');
 });
 
-router.get('/cart', ensureAuthenticated, function(req, res){
+router.get('/cart', function(req, res){
   res.render('cart');
 });
 
-router.get('/confirmation', ensureAuthenticated, function(req, res){
+router.get('/confirmation', function(req, res){
   res.render('confirmation');
 });
 
