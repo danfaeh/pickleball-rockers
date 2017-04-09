@@ -114,8 +114,27 @@ $(function(){
           return paypal.rest.payment.create(env, client, {
               transactions: [
                   {
+                    // {
+                    //   items: [
+                    //   {
+                    //     name: item 1,
+                    //     description: item 1 description,
+                    //     price: 1.00,
+                    //     currency: USD,
+                    //     tax: 1.00,
+                    //     quantity: 1
+                    //   },
+                    //   {
+                    //     "name": "item 2",
+                    //     "description": "item 2 description",
+                    //     "price": "1.00",
+                    //     "currency": "USD",
+                    //     "tax": "1.00",
+                    //     "quantity": 1
+                    //   }]
+                    // },
                       item_list: {
-                          "items": cartItems
+                          items: cartItems
                       },
                       amount: { 
                         total: '1.00', 
