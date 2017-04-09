@@ -104,7 +104,7 @@ $(function(){
       env: 'production', // Optional: specify 'sandbox' environment
       client: {
           sandbox:    'AfzwsZK9-P2UwhNErfkSgUZ-_-Y1HRvOAtENmloeVZDRjvNVN-hxla5NSxmL0j_rs3HhDyutEuxV5Kg8',
-          production: 'AWsviNjrOAXpMKGKmCcSZVpzT8vcHIiYK39aOBz0KRnbKqUyhejhNFPznlhJG1LdDX4UOFiOUEQCO7N8'
+          production: 'AbRDZyz98jAw1NKIOafI93bTz7rG8dEgD3VjvM_hnMi1JF-0LbE1p5TJGi_fMRhRk-4GLmqZb8TOGmqg'
       },        
       payment: function() {
           var env    = this.props.env;
