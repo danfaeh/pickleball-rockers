@@ -114,16 +114,28 @@ $(function(){
           return paypal.rest.payment.create(env, client, {
               transactions: [
                   {
-                    // {
-                    //   items: [
-                    //   {
-                    //     name: item 1,
-                    //     description: item 1 description,
-                    //     price: 1.00,
-                    //     currency: USD,
-                    //     tax: 1.00,
-                    //     quantity: 1
-                    //   },
+                    item_list:
+                    {
+                      items: 
+                      [
+                        {
+                          name: 'super cool product #1',
+                          description: 'test product 1',
+                          price: 77.00,
+                          currency: 'USD',
+                          tax: 77.00,
+                          quantity: 77
+                        },
+                        {
+                          name: 'super cool product #2',
+                          description: 'test product 2',
+                          price: 88.00,
+                          currency: 'USD',
+                          tax: 88.00,
+                          quantity: 88
+                        }                        
+                      ]
+                    },  
                     //   {
                     //     "name": "item 2",
                     //     "description": "item 2 description",
@@ -133,9 +145,9 @@ $(function(){
                     //     "quantity": 1
                     //   }]
                     // },
-                      item_list: {
-                          items: cartItems
-                      },
+                      // item_list: {
+                      //     items: cartItems
+                      // },
                       amount: { 
                         total: '1.00', 
                         currency: 'USD' 
