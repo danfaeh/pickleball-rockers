@@ -124,6 +124,7 @@ $(function(){
         return actions.payment.execute().then(function() {
           sendConfirmationEmail(cart);
           window.localStorage.clear();
+          updateNavItems();
           window.location.href = "/confirmation";
         });
       }
