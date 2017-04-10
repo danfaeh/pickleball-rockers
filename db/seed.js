@@ -134,8 +134,7 @@ var Products = [
     available: true,
     category: "jewelry",
     imageURL: "/moneyClip3.jpg"
-  }      
-
+  }
 ];
 
 Product.create(Products, function(err, products) {

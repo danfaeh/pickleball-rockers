@@ -43,8 +43,14 @@ router.post('/contact', function(req,res){
 });
 
 router.post('/orderConfirmation', function(req,res){
+  res.sendStatus(200);
 
-  var orderDetails = req.body; 
+  var orderItemArr = req.body.orderItems; 
+  var itemHtml = '';
+
+  orderItemArr.forEach(function(item) { 
+    itemHtml += '<p>Product: '+item.name+'  Unit Price: $'+item.price+' USD  Quantity: '+item.quantity+'</p>';   
+  });   
 
   // create reusable transporter object using the default SMTP transport
   var transporter = nodemailer.createTransport({
@@ -58,14 +64,16 @@ router.post('/orderConfirmation', function(req,res){
   // setup email data with unicode symbols
   var mailOptions = {
       // from: details.name+" <"+ form.customerEmail + ">",
-      // from: 'pickleballrockers@tampabay.rr.com',
-      // to: 'pickleballrockers@tampabay.rr.com', // list of receivers 
-      from: 'danfaeh@gmail.com',
-      to: 'danfaeh@gmail.com', // list of receivers             
+      to: 'pickleballrockers@tampabay.rr.com', // list of receivers 
+      from: 'PickleBallRocker@gmail.com',
       // to: 'danfaeh@gmail.com', // list of receivers
       subject: 'An Order Has Been Placed On PickleBallRockers.com', // Subject line
       // text: req.body.message + " my email address is: " + form.customerEmail // plain text body
-      html: '<p>'+ orderDetails +'</p><p>Customer email: testing@dan.com </p>' // html body
+      html: '<h2>Great news! A new order was placed on PickleBallRockers.com.</h2>'+
+            '<strong>Order Details:</strong>'+      
+              itemHtml+
+            // '<p>Customer email: insert customer email </p>' // html body
+            '<p>Check your <a href="https://www.paypal.com/signin">PayPal</a> account more details.</p>'  
   };  
 
   // send mail with defined transport object

@@ -75,7 +75,7 @@ $(function(){
 
   // Check if user on cart page
   if(window.location.href.indexOf("cart") > -1){
-
+    // window.location.reload(false);
     // Populate Shopping Cart Items and Totals using Local Storage
     if(window.localStorage.length===0){
       $('#emptyCart').show();    
@@ -83,33 +83,17 @@ $(function(){
     }else{
       $('#emptyCart').hide();    
       $('#cartTable').show();
-
       var subtotal = 0;
       var shipping = 10;
-      var paypalCartItems=[];
-
-      //loop through Local Storage Cart Items and append them to the customer Cart. Also build cartItems array.
+      var cartItems=[];
       for (var item in window.localStorage){
         itemObj = JSON.parse(window.localStorage.getItem(item));
-
-        var paypalCartItem = {
-          "name": itemObj.name,
-          // "description": "Brown hat.",
-          "quantity": itemObj.quantity,
-          "price": itemObj.price,
-          // "tax": "0.00",
-          "sku": itemObj.id,
-          "currency": "USD"          
-        };
-
-        paypalCartItems.push(paypalCartItem);
-
-        cartItemString = '<tr><td class="col-sm-8 col-md-6"><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a><div class="media-body"><h4 class="media-heading"><a href="#">'+itemObj.name+'</a></h4><h5 class="media-heading"> by <a href="#">Lyndee Lyndsey</a></h5><span>Status: </span><span class="text-success"><strong>In Stock</strong></span></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"><input type="number" class="form-control" id="quantity" value="'+itemObj.quantity+'" disabled></td><td class="col-sm-1 col-md-1 text-center"><strong>'+itemObj.price+'</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>'+itemObj.total+'</strong></td><td class="col-sm-1 col-md-1"><button type="button" class="btn btn-danger" onclick="removeCartItem(\''+itemObj.id+'\')"><span class="glyphicon glyphicon-remove"></span> Remove</button></td></tr>';
-        $('#cartList').prepend(cartItemString);
-
         subtotal = subtotal + (itemObj.price * itemObj.quantity);
+        cartItems.push(itemObj);
+        cartItemString = '<tr><td class="col-sm-8 col-md-6"><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a><div class="media-body"><h4 class="media-heading"><a href="#">'+itemObj.name+'</a></h4><h5 class="media-heading"> by <a href="#">Lyndee Lyndsey</a></h5><span>Status: </span><span class="text-success"><strong>In Stock</strong></span></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"><input type="number" class="form-control" id="quantity" value="'+itemObj.quantity+'" disabled></td><td class="col-sm-1 col-md-1 text-center"><strong>'+itemObj.price+'</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>'+itemObj.total+'</strong></td><td class="col-sm-1 col-md-1"><button type="button" class="btn btn-danger" onclick="removeCartItem(\''+itemObj.id+'\')"><span class="glyphicon glyphicon-remove"></span> Remove</button></td></tr>';
+        // $('#cartList').append('<li> Item: ',itemObj.name,' Quantity: ', itemObj.quantity,'</li>');    
+        $('#cartList').prepend(cartItemString);
       }
-
       var sum = subtotal+shipping;
       var total = sum.toFixed(2);
 
@@ -136,7 +120,7 @@ $(function(){
                   "details": {
                     "subtotal": subtotal,
                     // "tax": "0.07",
-                    "shipping": shipping
+                    "shipping": shipping,
                   }
                   },
                   "description": "The payment transaction description.",
@@ -147,7 +131,26 @@ $(function(){
                   // },
                   // "soft_descriptor": "ECHI5786786",
                   "item_list": {
-                  "items": paypalCartItems
+                  "items": [
+                    {
+                    "name": "hat",
+                    // "description": "Brown hat.",
+                    "quantity": "2",
+                    "price": "21.99",
+                    "tax": "0.00",
+                    "sku": "1",
+                    "currency": "USD"
+                    },
+                    {
+                    "name": "handbag",
+                    // "description": "Black handbag.",
+                    "quantity": "1",
+                    "price": "31.99",
+                    "tax": "0.00",
+                    "sku": "product34",
+                    "currency": "USD"
+                    }
+                  ]
                   }
                 }
                 ]
@@ -158,7 +161,8 @@ $(function(){
       commit: true, // Optional: show a 'Pay Now' button in the checkout flow        
       onAuthorize: function(data, actions) {      
         return actions.payment.execute().then(function() {
-          sendConfirmationEmail(paypalCartItems);
+          console.log("cartItems",cartItems);
+          sendConfirmationEmail(cartItems);
           window.localStorage.clear();
           updateNavItems();
           window.location.href = "/confirmation";
