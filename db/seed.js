@@ -55,6 +55,24 @@ var Products = [
     imageURL: "/rockersShirt.png"
   },
   {
+    id: "paddle-colorado",
+    name: "Colorado Paddle",
+    description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+    price: 31.99,
+    available: true,
+    category: "paddle",
+    imageURL: "/coloradoPaddle.jpg"
+  },
+  {
+    id: "paddle-canada",
+    name: "Canada Paddle",
+    description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
+    price: 31.99,
+    available: true,
+    category: "paddle",
+    imageURL: "/canadaPaddle.jpg"
+  },  
+  {
     id: "paddle-pickleball-rockers",
     name: "Pickleball Rockers Paddle",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
