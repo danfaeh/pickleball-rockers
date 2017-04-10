@@ -3,13 +3,13 @@ var router = express.Router();
 var Product = require('../models/product.js');
 
 // Get products
-router.get('/', ensureAuthenticated, function(req, res){
+router.get('/', function(req, res){
   Product.find({}, function(err, products) {
     res.render('products/allproducts', {products: products});
   });  
 });
 
-router.get('/:productId', ensureAuthenticated, function(req, res){
+router.get('/:productId', function(req, res){
   var id = req.params.productId;
   Product.find({id:id}, function(err, product) {
     res.render('products/product', {product: product});
