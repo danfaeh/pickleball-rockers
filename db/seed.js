@@ -13,7 +13,7 @@ var Products = [
     id: "rockers-blue-shirt",
     name: "Pickleball Rockers Blue Shirt",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-    price: 21.99,
+    price: 45.00,
     available: true,
     category: "shirt",
     imageURL: "/blueShirt.jpg"
@@ -22,7 +22,7 @@ var Products = [
     id: "rockers-yellow-shirt",
     name: "Pickleball Rockers Yellow Shirt",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-    price: 21.99,
+    price: 45.00,
     available: true,
     category: "shirt",
     imageURL: "/yellowShirt.jpg"
@@ -31,7 +31,7 @@ var Products = [
     id: "rockers-grey-shirt",
     name: "Pickleball Rockers Grey Shirt",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-    price: 21.99,
+    price: 45.00,
     available: true,
     category: "shirt",
     imageURL: "/greyShirt.jpg"
@@ -40,7 +40,7 @@ var Products = [
     id: "lover-white-crew-drifit",
     name: "Pickleball Lover Dri-FIT Shirt",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-    price: 21.99,
+    price: 45.00,
     available: true,
     category: "shirt",
     imageURL: "/loverShirt.png"
@@ -49,7 +49,7 @@ var Products = [
     id: "rockers-white-crew-drifit",
     name: "Pickleball Rockers Dri-FIT Shirt",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-    price: 21.99,
+    price: 45.00,
     available: true,
     category: "shirt",
     imageURL: "/rockersShirt.png"
@@ -58,7 +58,7 @@ var Products = [
     id: "paddle-colorado",
     name: "Colorado Paddle",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-    price: 31.99,
+    price: 135.00,
     available: true,
     category: "paddle",
     imageURL: "/coloradoPaddle.jpg"
@@ -67,7 +67,7 @@ var Products = [
     id: "paddle-canada",
     name: "Canada Paddle",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-    price: 31.99,
+    price: 135.00,
     available: true,
     category: "paddle",
     imageURL: "/canadaPaddle.jpg"
@@ -76,7 +76,7 @@ var Products = [
     id: "paddle-pickleball-rockers",
     name: "Pickleball Rockers Paddle",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-    price: 31.99,
+    price: 135.00,
     available: true,
     category: "paddle",
     imageURL: "/rockersPaddle.jpg"
@@ -85,7 +85,7 @@ var Products = [
     id: "paddle-pickleball-lover",
     name: "Pickleball Lover Paddle",
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-    price: 31.99,
+    price: 135.00,
     available: true,
     category: "paddle",
     imageURL: "/loverPaddle.jpg"
