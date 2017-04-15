@@ -7,13 +7,15 @@
 #headlineTop{
     color: white;
     top: 1em;
-    position: relative;    
+    position: relative; 
+    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;              
 }
 
 #headlineBottom{
     color: white;
-    top: 67%;
-    position: relative;    
+    top: 28em;
+    position: relative; 
+    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;       
 }
 
 #mainNav{
