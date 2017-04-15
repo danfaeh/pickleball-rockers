@@ -128,6 +128,12 @@
     max-width: 35% !important;
 }
 
+.home-img{
+    margin: 0 auto;
+    max-width: 35% !important;
+    display:block;
+}
+
 .about-content{
     padding: 0 3em;
 }

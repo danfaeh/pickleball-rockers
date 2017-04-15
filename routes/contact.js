@@ -3,11 +3,11 @@ var router = express.Router();
 var nodemailer = require('nodemailer');
 
 // Get Contact
-router.get('/contact', function(req, res){
+router.get('/contact', ensureAuthenticated, function(req, res){
   res.render('contact');
 });
 
-router.post('/contact', function(req,res){
+router.post('/contact', ensureAuthenticated, function(req,res){
 
   var form = req.body; 
 

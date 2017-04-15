@@ -73,6 +73,13 @@ $(function(){
     });    
   });
 
+  if(window.location.href === "http://localhost:4000/" || window.location.href === "http://www.pickleballrockers.com/"){
+    setTimeout(function(){ 
+      $('#home1').hide(); 
+      $('#home2').show(); 
+    }, 5000);
+  }
+
   // Check if user on cart page
   if(window.location.href.indexOf("cart") > -1){
 
