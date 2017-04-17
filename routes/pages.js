@@ -12,8 +12,9 @@ router.get('/',ensureAuthenticated, function(req, res){
   res.render('home');
 });
 
-router.get('/test',ensureAuthenticated, function(req, res){
-  res.render('test');
+// Admin
+router.get('/admin', ensureAuthenticated, function(req, res){
+  res.render('admin');
 });
 
 router.get('/about',ensureAuthenticated, function(req, res){

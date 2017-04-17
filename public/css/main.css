@@ -1,28 +1,47 @@
 #homeBackdrop{
     background-color: black;
     height: 85vh;
-    margin-top: -3em;
+    margin-top: -2.6em;
 }
 
-#headlineTop{
-    color: white;
-    top: 1em;
-    position: relative; 
+/*#topArc span{
+  color: white;
+  font: 26px Monaco, MonoSpace;
+  height: 200px;
+  position: absolute;
+  width: 20px;
+  left: 1em;
+  top: -4em;
+  transform-origin: bottom center;
 }
+
+#bottomArc span{
+  color: white;
+  font: 26px Monaco, MonoSpace;
+  height: 200px;
+  position: absolute;
+  width: 20px;
+  left: -1em;
+  top: -10em;
+  transform-origin: top center;
+}
+
+#topArc{
+    transform: rotate(-67deg);        
+}
+
+#bottomArc{
+    transform: rotate(-50deg) scale(-1,-1);
+}*/
 
 #headlineBottom{
     color: white;
-    top: 33em;
+    top: 20em;
     position: relative; 
-}
-
-.yellowLetters{
-    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;           
 }
 
 #mainNav{
     background-color: white; 
-    margin-bottom: 0;
     height: 7em;
 }
 
@@ -31,6 +50,15 @@
     margin-bottom: 0;
     border: none;
     max-height: 2.4em;
+}
+
+.img-circle{
+    max-height: 17em;
+    margin: 0 auto;  
+}
+
+.yellowLetters{
+    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;           
 }
 
 .nav-links{
@@ -198,3 +226,229 @@ font-size: 24px;
     display: table;
     margin: 0 auto;
 }
+
+
+/*---------------------Rotate-----------------------------*/
+
+/*.char1 {
+  transform: rotate(6deg);
+}
+
+.char2 {
+  transform: rotate(12deg);
+}
+
+.char3 {
+  transform: rotate(18deg);
+}
+
+.char4 {
+  transform: rotate(24deg);
+}
+
+.char5 {
+  transform: rotate(30deg);
+}
+
+.char6 {
+  transform: rotate(36deg);
+}
+
+.char7 {
+  transform: rotate(42deg);
+}
+
+.char8 {
+  transform: rotate(48deg);
+}
+
+.char9 {
+  transform: rotate(54deg);
+}
+
+.char10 {
+  transform: rotate(60deg);
+}
+
+.char11 {
+  transform: rotate(66deg);
+}
+
+.char12 {
+  transform: rotate(72deg);
+}
+
+.char13 {
+  transform: rotate(78deg);
+}
+
+.char14 {
+  transform: rotate(84deg);
+}
+
+.char15 {
+  transform: rotate(90deg);
+}
+
+.char16 {
+  transform: rotate(96deg);
+}
+
+.char17 {
+  transform: rotate(102deg);
+}
+
+.char18 {
+  transform: rotate(108deg);
+}
+
+.char19 {
+  transform: rotate(114deg);
+}
+
+.char20 {
+  transform: rotate(120deg);
+}
+
+.char21 {
+  transform: rotate(126deg);
+}
+
+.char22 {
+  transform: rotate(132deg);
+}*/
+
+/*---------------------Rotate-----------------------------*/
+
+/*#bottomArc .char1 {
+  transform: rotate(6deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char2 {
+  transform: rotate(12deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char3 {
+  transform: rotate(18deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char4 {
+  transform: rotate(24deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char5 {
+  transform: rotate(30deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char6 {
+  transform: rotate(36deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char7 {
+  transform: rotate(42deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char8 {
+  transform: rotate(48deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char9 {
+  transform: rotate(54deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char10 {
+  transform: rotate(60deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char11 {
+  transform: rotate(66deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char12 {
+  transform: rotate(72deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char13 {
+  transform: rotate(78deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char14 {
+  transform: rotate(84deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char15 {
+  transform: rotate(90deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char16 {
+  transform: rotate(96deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char17 {
+  transform: rotate(102deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char18 {
+  transform: rotate(108deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char19 {
+  transform: rotate(114deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char20 {
+  transform: rotate(120deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char21 {
+  transform: rotate(126deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}
+
+#bottomArc .char22 {
+  transform: rotate(132deg);
+  margin-top: 200px;
+  transform-origin: bottom center;
+}*/
+

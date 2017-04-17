@@ -2,15 +2,16 @@
 $('#error').hide();
 $('#itemAddText').hide();
 
+
+
+// $('#topArc').lettering();
+// $('#bottomArc').lettering();
+
 //*******************************************************//
 //                    Cart Updates                       //
 //*******************************************************//
 
 updateNavItems();
-
-function test123(){
-  alert(">>>>Paypal Checkout Integration Goes Here<<<<");
-}
 
 function removeCartItem(item){
   localStorage.removeItem(item);
@@ -49,7 +50,7 @@ function updateNavItems(){
 //On Page Load
 $(function(){ 
 
-  // $('#headlineTop').arctext({radius: 300});
+  // $('#topArc').arctext({radius: 300});
 
   $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
   $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
@@ -74,9 +75,15 @@ $(function(){
   });
 
   if(window.location.href === "http://localhost:4000/" || window.location.href === "http://www.pickleballrockers.com/"){
+    
     setTimeout(function(){ 
       $('#home1').hide(); 
       $('#home2').show(); 
+
+$('#topArc').circleType({radius: 200});
+$('#bottomArc').circleType({radius: 200, dir:-1});
+
+      
     }, 5000);
   }
 

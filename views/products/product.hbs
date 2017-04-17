@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row">
        <div class="col-xs-4 item-photo">
-                        <img style="max-width:100%;" src="../public/images/products/1x/{{imageURL}}" />
+                        <img style="max-width:75%;" src="../public/images/products/1x/{{imageURL}}" />
                     </div>
                     <div class="col-xs-5" style="border:0px solid gray">
                         <!-- Datos del vendedor y titulo del producto -->
@@ -38,6 +38,11 @@
                         <div class="section" style="padding-bottom:20px;">
                             <button class="btn btn-success" onclick="addToCart('{{id}}','{{name}}','{{price}}');"><span style="margin-right:20px" class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>Add to Cart</button>
                             <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Add to Favorites</a></h6>
+
+{{!--                             <a href="/products/{{id}}/edit" class="btn btn-default btn-sm">
+                              <span class="glyphicon glyphicon-wrench"></span>
+                            </a>  --}}
+
                         </div> 
                         <h4 id="itemAddText" >Added to Cart!</h4>                                       
                     </div>                              

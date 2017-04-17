@@ -49,34 +49,36 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right nav-links">
+              {{#if user.admin}}
                   <li>
-                      <a class="page-scroll" href="/">Home</a>
+                      <a href="/admin">Admin</a>
+                  </li>
+              {{/if}}    
+                  <li>
+                      <a href="/products">Products</a>
                   </li>
                   <li>
-                      <a class="page-scroll" href="/products">Products</a>
-                  </li>
-                  <li>
-                      <a class="page-scroll" href="/logos">Logos</a>
+                      <a href="/logos">Logos</a>
                   </li>  
                   <li>
-                      <a class="page-scroll" href="/about">About</a>
+                      <a href="/about">About</a>
                   </li>                                   
                   <li>
-                      <a class="page-scroll" href="/contact">Contact</a>
+                      <a href="/contact">Contact</a>
                   </li> 
                   {{#if user}}               
                   <li>
-                      <a class="page-scroll" href="/users/account">Account</a>
+                      <a href="/users/account">Account</a>
                   </li>   
                   <li>
-                      <a class="page-scroll" href="/users/logout">Logout</a>
+                      <a href="/users/logout">Logout</a>
                   </li>  
                   {{else}}
                   <li>
-                      <a class="page-scroll" href="/users/login">Login</a>
+                      <a href="/users/login">Login</a>
                   </li>
                   <li>
-                      <a class="page-scroll" href="/users/register">Create Account</a>
+                      <a href="/users/register">Create Account</a>
                   </li>
                   {{/if}}                                               
               </ul>
