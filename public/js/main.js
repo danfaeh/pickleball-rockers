@@ -57,14 +57,12 @@ function removeProduct(productId){
     data: {"productId": productId},
     success: function(data) { 
       if(data){
-        document.cookie = pass;
-        window.location.href = "/";
+        window.location.reload(false);         
       } else {
-        $('#error').show();
+        console.log("fail!!!!");
       }  
     }
   });
-  console.log("remove product connected");
 }
 
 //*******************************************************//

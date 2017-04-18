@@ -47,12 +47,12 @@ router.post('/edit/:productId', ensureAuthenticated, function(req, res){
 });
 
 router.post('/remove', ensureAuthenticated, function(req, res){
-  Product.findOneAndRemove({id:req.body.id }, function(err, product) {
+  Product.findOneAndRemove({id:req.body.productId }, function(err, product) {
       if (err) {
         res.redirect('/');
         console.log("error: " + err);
       } else {
-        req.flash('success', 'product ' + product.name + ' Has Been Deleted');
+        req.flash('success product Has Been Deleted');
         res.json(product);
       }
     });

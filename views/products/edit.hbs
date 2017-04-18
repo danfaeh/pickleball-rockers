@@ -2,7 +2,7 @@
 
 <div class="container">
 
-    <h2 class="text-center">Product Edit Section</h2><hr>
+    <h2 class="text-center">Edit Products</h2><hr>
 
     <div id="products" class="row list-group">
 
@@ -15,7 +15,7 @@
                           <input type="text" class="hidden" value="{{id}}" name="id">                           
                           <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="group inner" placeholder="Product Name" value="{{name}}" name="name">
+                            <input type="text" class="group inner" placeholder="Product Name" value="{{name}}" name="name" size="40">
                           </div>
                            <div class="form-group">
                             <label for="description">Description</label><br>
@@ -27,10 +27,10 @@
                           </div>
                           <div class="form-group">
                             <label>Image Storage Location</label>
-                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{imgStorage}}" name="imgStorage">
+                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{imgStorage}}" name="imgStorage" size="40">
                           </div>                          
                           <button type="submit" class="btn btn-primary">Update Product</button>
-                          <button type="button" onclick="removeProduct()" class="btn btn-danger pull-right">Remove Product</button>
+                          <button type="button" onclick="removeProduct('{{id}}')" class="btn btn-danger pull-right">Remove Product</button>
                         </form>
                     </div>
                 </div>
@@ -45,11 +45,11 @@
                         <form method="POST" action="/products/create">
                           <div class="form-group">
                             <label>Id</label>
-                            <input type="text" class="group inner" placeholder="ex: colorado-paddle" name="id">
+                            <input type="text" class="group inner" placeholder="ex: colorado-paddle" name="id" size="40">
                           </div>                                                   
                           <div class="form-group">
                             <label>Name</label>
-                            <input type="text" class="group inner" placeholder="ex: Colorado Paddle" name="name">
+                            <input type="text" class="group inner" placeholder="ex: Colorado Paddle" name="name" size="40">
                           </div>
                            <div class="form-group">
                             <label for="description">Description</label><br>
@@ -61,7 +61,7 @@
                           </div>
                           <div class="form-group">
                             <label>Image Storage Location</label>
-                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" name="imgStorage">
+                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" name="imgStorage" size="40">
                           </div>                          
                           <button type="submit" class="btn btn-success">Create New Product</button>
                         </form>
