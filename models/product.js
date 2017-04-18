@@ -7,7 +7,8 @@ var ProductSchema = mongoose.Schema({
   price: Number,
   available: Boolean,
   category: String,
-  imageURL: String
+  imageURL: String,
+  imgStorage: String
 });
 
 // Getter

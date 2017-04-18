@@ -1,42 +1,37 @@
 #homeBackdrop{
-    background-color: black;
     height: 85vh;
     margin-top: -2.6em;
 }
 
-/*#topArc span{
-  color: white;
-  font: 26px Monaco, MonoSpace;
-  height: 200px;
-  position: absolute;
-  width: 20px;
-  left: 1em;
-  top: -4em;
-  transform-origin: bottom center;
+#home1{
+    background-color: white;
 }
 
-#bottomArc span{
-  color: white;
-  font: 26px Monaco, MonoSpace;
-  height: 200px;
-  position: absolute;
-  width: 20px;
-  left: -1em;
-  top: -10em;
-  transform-origin: top center;
+#home2{
+    background-color: black;
+    height: 100%;        
 }
 
 #topArc{
-    transform: rotate(-67deg);        
+  margin-top: 8%;
 }
 
 #bottomArc{
-    transform: rotate(-50deg) scale(-1,-1);
-}*/
+  margin-top: 8%;
+}
 
-#headlineBottom{
-    color: white;
-    top: 20em;
+#homeInfoSection{
+    top: -15em;
+    position: relative; 
+}
+
+#homeInfo2{
+  top: .5em;
+  position: relative;
+}
+
+#homeButtonSection{
+    top: -13em;
     position: relative; 
 }
 
@@ -58,7 +53,13 @@
 }
 
 .yellowLetters{
-    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;           
+    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow; 
+    color:white;          
+}
+
+.homeInfo{
+    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow; 
+    color:black;          
 }
 
 .nav-links{
@@ -116,9 +117,9 @@
     margin-bottom: 10px;
 }
 
-.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover{
+/*.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover{
     background: #428bca;
-}
+}*/
 
 .item.list-group-item .list-group-image{
     margin-right: 10px;

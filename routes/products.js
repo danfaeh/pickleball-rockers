@@ -22,16 +22,40 @@ router.get('/admin/:category', ensureAuthenticated, function(req, res){
     if(err){
       console.log("an error occured: ",err);
     }
-    console.log("DANfind",products);
     res.render('products/edit', {products: products});
   });    
 });
 
-router.get('/:productId/edit', ensureAuthenticated, function(req, res){
-  var id = req.params.productId;
-  Product.find({id:id}, function(err, product) {
-    res.render('products/edit', {product: product});
+router.post('/edit/:productId', ensureAuthenticated, function(req, res){
+  var convertPrice = req.body.price * 100;
+
+  Product.findOneAndUpdate({id:req.body.id}, {
+    name: req.body.name,
+    description: req.body.description,
+    price: convertPrice,
+    imgStorage: req.body.imgStorage
+  }, function(err, product) {
+    if (err) {
+      res.redirect('/');
+      console.log("error: " + err);
+    } else {
+      console.log('Product Has Been Updated');
+      req.flash('success', 'Product Has Been Updated');
+      res.redirect('/products/admin/'+product.category);
+    }
   });
+});
+
+router.post('/remove', ensureAuthenticated, function(req, res){
+  Product.findOneAndRemove({id:req.body.id }, function(err, product) {
+      if (err) {
+        res.redirect('/');
+        console.log("error: " + err);
+      } else {
+        req.flash('success', 'product ' + product.name + ' Has Been Deleted');
+        res.json(product);
+      }
+    });
 });
 
 // function ensureAuthenticated(req, res, next){

@@ -46,6 +46,31 @@ function updateNavItems(){
 //*******************************************************//
 //*******************************************************//
 
+//*******************************************************//
+//                    Product Updates                    //
+//*******************************************************//
+
+function removeProduct(productId){
+  $.ajax({
+    type: "POST",
+    url: "/products/remove",
+    data: {"productId": productId},
+    success: function(data) { 
+      if(data){
+        document.cookie = pass;
+        window.location.href = "/";
+      } else {
+        $('#error').show();
+      }  
+    }
+  });
+  console.log("remove product connected");
+}
+
+//*******************************************************//
+//*******************************************************//
+//*******************************************************//
+
 
 //On Page Load
 $(function(){ 
@@ -75,15 +100,12 @@ $(function(){
   });
 
   if(window.location.href === "http://localhost:4000/" || window.location.href === "http://www.pickleballrockers.com/"){
-    
     setTimeout(function(){ 
       $('#home1').hide(); 
       $('#home2').show(); 
 
-$('#topArc').circleType({radius: 200});
-$('#bottomArc').circleType({radius: 200, dir:-1});
-
-      
+      $('#topArc').circleType({radius: 190});
+      $('#bottomArc').circleType({radius: 190, dir:-1});
     }, 5000);
   }
 
