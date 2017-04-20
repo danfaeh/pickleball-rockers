@@ -2,14 +2,14 @@
 
 <div class="container">
 
-    <h2 class="text-center">Edit Products</h2><hr>
+    <h2 class="text-center">Edit {{category}}</h2><hr>
 
     <div id="products" class="row list-group">
 
         {{#each products}}
             <div class="item list-group-item col-xs-4 col-lg-4">
                 <div class="thumbnail">
-                    <img class="group list-group-image" src="../../public/images/products/1x/{{imageURL}}" alt="" />
+                    <img class="group list-group-image" src="../../public/images/products/1x/{{imgExtension}}" alt="" />
                     <div class="caption">
                         <form method="POST" action="/products/edit/{{id}}">
                           <input type="text" class="hidden" value="{{id}}" name="id">                           
@@ -27,7 +27,7 @@
                           </div>
                           <div class="form-group">
                             <label>Image Storage Location</label>
-                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{imgStorage}}" name="imgStorage" size="40">
+                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{imgURL}}" name="imgURL" size="40">
                           </div>                          
                           <button type="submit" class="btn btn-primary">Update Product</button>
                           <button type="button" onclick="removeProduct('{{id}}')" class="btn btn-danger pull-right">Remove Product</button>
@@ -43,6 +43,7 @@
                     <img class="group list-group-image" src="http://comps.canstockphoto.com/can-stock-photo_csp9810958.jpg" alt="" />
                     <div class="caption">
                         <form method="POST" action="/products/create">
+                          <input type="text" class="hidden" value="{{category}}" name="category">                       
                           <div class="form-group">
                             <label>Id</label>
                             <input type="text" class="group inner" placeholder="ex: colorado-paddle" name="id" size="40">
@@ -53,15 +54,15 @@
                           </div>
                            <div class="form-group">
                             <label for="description">Description</label><br>
-                            <textarea cols="70" rows="3" class="group inner" placeholder="Write product description here" id="description" name="description">{{description}}</textarea>
+                            <textarea cols="70" rows="3" class="group inner" placeholder="Write product description here" id="description" name="description"></textarea>
                           </div>
                           <div class="form-group">
                             <label>Price</label>
                             <input type="text" class="group inner" placeholder="ex: 45.00" name="price">
-                          </div>
+                          </div>                         
                           <div class="form-group">
                             <label>Image Storage Location</label>
-                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" name="imgStorage" size="40">
+                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" name="imgURL" size="40">
                           </div>                          
                           <button type="submit" class="btn btn-success">Create New Product</button>
                         </form>

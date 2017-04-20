@@ -15,8 +15,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 45.00,
     available: true,
-    category: "shirt",
-    imageURL: "/blueShirt.jpg"
+    category: "Shirts",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/blueShirt.jpg"
   },
   {
     id: "rockers-yellow-shirt",
@@ -24,8 +25,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 45.00,
     available: true,
-    category: "shirt",
-    imageURL: "/yellowShirt.jpg"
+    category: "Shirts",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/yellowShirt.jpg"
   },
   {
     id: "rockers-grey-shirt",
@@ -33,8 +35,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 45.00,
     available: true,
-    category: "shirt",
-    imageURL: "/greyShirt.jpg"
+    category: "Shirts",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/greyShirt.jpg"
   },
   {
     id: "lover-white-crew-drifit",
@@ -42,8 +45,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 45.00,
     available: true,
-    category: "shirt",
-    imageURL: "/loverShirt.png"
+    category: "Shirts",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/loverShirt.png"
   },
   {
     id: "rockers-white-crew-drifit",
@@ -51,8 +55,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 45.00,
     available: true,
-    category: "shirt",
-    imageURL: "/rockersShirt.png"
+    category: "Shirts",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/rockersShirt.png"
   },
   {
     id: "paddle-colorado",
@@ -60,8 +65,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 135.00,
     available: true,
-    category: "paddle",
-    imageURL: "/coloradoPaddle.jpg"
+    category: "Paddles",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/coloradoPaddle.jpg"
   },
   {
     id: "paddle-canada",
@@ -69,8 +75,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 135.00,
     available: true,
-    category: "paddle",
-    imageURL: "/canadaPaddle.jpg"
+    category: "Paddles",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/canadaPaddle.jpg"
   },  
   {
     id: "paddle-pickleball-rockers",
@@ -78,8 +85,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 135.00,
     available: true,
-    category: "paddle",
-    imageURL: "/rockersPaddle.jpg"
+    category: "Paddles",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/rockersPaddle.jpg"
   },
   {
     id: "paddle-pickleball-lover",
@@ -87,8 +95,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 135.00,
     available: true,
-    category: "paddle",
-    imageURL: "/loverPaddle.jpg"
+    category: "Paddles",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/loverPaddle.jpg"
   },   
   {
     id: "all-jewelry",
@@ -96,8 +105,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
-    category: "jewelry",
-    imageURL: "/allJewelry.jpg"
+    category: "Jewelry",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/allJewelry.jpg"
   },
   {
     id: "bracelet",
@@ -105,8 +115,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
-    category: "jewelry",
-    imageURL: "/bracelet.jpg"
+    category: "Jewelry",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/bracelet.jpg"
   },
   {
     id: "earings-1",
@@ -114,8 +125,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
-    category: "jewelry",
-    imageURL: "/earings1.jpg"
+    category: "Jewelry",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/earings1.jpg"
   },
   {
     id: "earings-2",
@@ -123,8 +135,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
-    category: "jewelry",
-    imageURL: "/earings2.jpg"
+    category: "Jewelry",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/earings2.jpg"
   },
   {
     id: "money-clip-1",
@@ -132,8 +145,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
-    category: "jewelry",
-    imageURL: "/moneyClip1.jpg"
+    category: "Jewelry",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/moneyClip1.jpg"
   },
   {
     id: "money-clip-2",
@@ -141,8 +155,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
-    category: "jewelry",
-    imageURL: "/moneyClip2.jpg"
+    category: "Jewelry",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/moneyClip2.jpg"
   },
   {
     id: "money-clip-3",
@@ -150,8 +165,9 @@ var Products = [
     description: "Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
     price: 21.99,
     available: true,
-    category: "jewelry",
-    imageURL: "/moneyClip3.jpg"
+    category: "Jewelry",
+    imgURL: "http://i.imgur.com/efH1Aem.jpg",
+    imgExtension: "/moneyClip3.jpg"
   }
 ];
 

@@ -25,14 +25,10 @@
     position: relative; 
 }
 
-#homeInfo2{
-  top: .5em;
-  position: relative;
-}
-
 #homeButtonSection{
     top: -13em;
     position: relative; 
+    color:white;              
 }
 
 #mainNav{
@@ -47,6 +43,10 @@
     max-height: 2.4em;
 }
 
+.homeInfo{
+  color:white;
+}
+
 .img-circle{
     max-height: 17em;
     margin: 0 auto;  
@@ -55,11 +55,6 @@
 .yellowLetters{
     text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow; 
     color:white;          
-}
-
-.homeInfo{
-    text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow; 
-    color:black;          
 }
 
 .nav-links{

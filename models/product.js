@@ -7,8 +7,8 @@ var ProductSchema = mongoose.Schema({
   price: Number,
   available: Boolean,
   category: String,
-  imageURL: String,
-  imgStorage: String
+  imgExtension: String,
+  imgURL: String
 });
 
 // Getter
@@ -24,25 +24,3 @@ ProductSchema.path('price').set(function(num) {
 var Product = mongoose.model('Product', ProductSchema);
 
 module.exports = Product;
-
-
-
-
-// var mongoose = require('mongoose');
-
-// require('mongoose-currency').loadType(mongoose);
-// var Currency = mongoose.Types.Currency;
-
-// var ProductSchema = mongoose.Schema({
-//   id: String,
-//   name: String,
-//   description: String,
-//   price: { type: Currency },
-//   available: Boolean,
-//   category: String,
-//   imageURL: String
-// });
-
-// var Product = mongoose.model('Product', ProductSchema);
-
-// module.exports = Product;

@@ -22,8 +22,33 @@ router.get('/admin/:category', ensureAuthenticated, function(req, res){
     if(err){
       console.log("an error occured: ",err);
     }
-    res.render('products/edit', {products: products});
+    res.render('products/edit', {products: products,category:category});
   });    
+});
+
+router.post('/create', ensureAuthenticated, function(req, res){
+  var convertPrice = req.body.price * 100;
+
+  productObj = {
+    id: req.body.id,
+    name: req.body.name,
+    description: req.body.description,
+    category: req.body.category,
+    price: req.body.price,
+    imgURL: req.body.imgURL
+  };
+
+  Product.create(productObj, function(err, product) {
+    if (err) {
+      console.log('there was an error creating the product:', err);
+      res.redirect('/');
+    } else {
+      req.flash('success', 'New Client Created Successfully');
+      console.log('product create successful!');
+      res.redirect('/admin');
+    }
+  });
+
 });
 
 router.post('/edit/:productId', ensureAuthenticated, function(req, res){
@@ -33,7 +58,7 @@ router.post('/edit/:productId', ensureAuthenticated, function(req, res){
     name: req.body.name,
     description: req.body.description,
     price: convertPrice,
-    imgStorage: req.body.imgStorage
+    imgURL: req.body.imgURL
   }, function(err, product) {
     if (err) {
       res.redirect('/');
