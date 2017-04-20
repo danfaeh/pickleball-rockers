@@ -200,22 +200,6 @@ var Logos = [
   }
 ];
 
-var Users = [
-  {
-    name: "admin",
-    email: "pickleballrockers@tampabay.rr.com",
-    username: "admin",
-    password: "$2a$10$v/cBZdlwQ.KGub1vdi8YQ.B3IR4MN3cpCS6h1s5mNlk6GtyhIevLW",
-    admin: true
-  },
-  {
-    name: "Daniel Faeh",
-    email: "danfaeh@gmail.com",
-    username: "danfaeh",
-    password: "$2a$10$k8v1F2okIPtH3ATDR2xRjO81XsHia88xy2Wg2uhv1xpc9l9R3JqzG",
-    admin: true
-  }
-];
 
 Product.create(Products, function(err, products) {
   if (err) {
@@ -233,11 +217,5 @@ Logo.create(Logos, function(err, logos) {
   }
 });
 
-User.create(Users, function(err, users) {
-  if (err) {
-    console.log("There was an error creating initial users: ", err);
-  } else {
-    console.log("Created:", users);
-    mongoose.connection.close();
-  }
-});
+
+
