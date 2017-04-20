@@ -1,0 +1,59 @@
+  {{> nav}}
+
+<div class="container">
+
+    <h2 class="text-center">Edit Logos</h2><hr>
+
+    <div id="logos" class="row list-group">
+
+        {{#each logos}}
+            <div class="item list-group-item col-xs-4 col-lg-4">
+                <div class="thumbnail">
+                    <img class="group list-group-image" src="{{imgURL}}" alt="" />
+                    <div class="caption">
+                        <form method="POST" action="/logos/edit/{{id}}">
+                          <input type="text" class="hidden" value="{{id}}" name="id">                           
+                          <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="group inner" placeholder="Logo Name" value="{{name}}" name="name" size="40">
+                          </div>
+                          <div class="form-group">
+                            <label>Image Direct Link</label>
+                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{imgURL}}" name="imgURL" size="40">
+                          </div>                          
+                          <button type="submit" class="btn btn-primary">Update Logo</button>
+                          <button type="button" onclick="removeLogo('{{id}}')" class="btn btn-danger pull-right">Remove Logo</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+
+            {{!-- add new logo --}}
+            <div class="item list-group-item col-xs-4 col-lg-4">
+                <div class="thumbnail">
+                    <img class="group list-group-image" src="http://comps.canstockphoto.com/can-stock-photo_csp9810958.jpg" alt="" />
+                    <div class="caption">
+                        <form method="POST" action="/logos/create">
+                          <input type="text" class="hidden" value="{{category}}" name="category">                       
+                          <div class="form-group">
+                            <label>Id</label>
+                            <input type="text" class="group inner" placeholder="ex: arizona-logo" name="id" size="40">
+                          </div>                                                   
+                          <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="group inner" placeholder="ex: Arizona" name="name" size="40">
+                          </div>                         
+                          <div class="form-group">
+                            <label>Image Direct Link</label>
+                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" name="imgURL" size="40">
+                          </div>                          
+                          <button type="submit" class="btn btn-success">Add New Logo</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+    
+</div>

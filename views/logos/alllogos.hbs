@@ -1,0 +1,29 @@
+  {{> nav}}
+
+<div class="container">
+    <div class="well well-sm">
+        <strong>All Logos</strong>         
+    </div>
+    <div id="logos" class="row list-group">
+
+        {{#each logos}}
+
+            <div class="item  col-xs-12 col-sm-4">
+                <div class="thumbnail">
+                    <a href="/logos/{{id}}">
+                        <img class="group list-group-image" src="{{imgURL}}" alt="" />
+                    </a>
+                    <div class="caption">
+                        <h4 class="text-center group inner list-group-item-heading">{{name}}</h4>
+                    </div>
+                </div>
+            </div>
+
+        {{/each}}
+
+    </div>
+    
+</div>
+
+
+    {{!-- http://placehold.it/400x250/000/fff --}}

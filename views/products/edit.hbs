@@ -9,7 +9,7 @@
         {{#each products}}
             <div class="item list-group-item col-xs-4 col-lg-4">
                 <div class="thumbnail">
-                    <img class="group list-group-image" src="../../public/images/products/1x/{{imgExtension}}" alt="" />
+                    <img class="group list-group-image" src="{{imgURL}}" alt="" />
                     <div class="caption">
                         <form method="POST" action="/products/edit/{{id}}">
                           <input type="text" class="hidden" value="{{id}}" name="id">                           
@@ -26,7 +26,7 @@
                             <input type="text" class="group inner" placeholder="Price" value="{{price}}" name="price">
                           </div>
                           <div class="form-group">
-                            <label>Image Storage Location</label>
+                            <label>Image Direct Link</label>
                             <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{imgURL}}" name="imgURL" size="40">
                           </div>                          
                           <button type="submit" class="btn btn-primary">Update Product</button>
@@ -61,7 +61,7 @@
                             <input type="text" class="group inner" placeholder="ex: 45.00" name="price">
                           </div>                         
                           <div class="form-group">
-                            <label>Image Storage Location</label>
+                            <label>Image Direct Link</label>
                             <input type="text" class="group inner" placeholder="www.imgur.com/myimage" name="imgURL" size="40">
                           </div>                          
                           <button type="submit" class="btn btn-success">Create New Product</button>

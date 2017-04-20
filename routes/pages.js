@@ -21,10 +21,6 @@ router.get('/about',ensureAuthenticated, function(req, res){
   res.render('about');
 });
 
-router.get('/logos',ensureAuthenticated, function(req, res){
-  res.render('logos');
-});
-
 router.get('/cart',ensureAuthenticated, function(req, res){
   res.render('cart');
 });

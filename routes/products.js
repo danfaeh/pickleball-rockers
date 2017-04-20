@@ -45,7 +45,7 @@ router.post('/create', ensureAuthenticated, function(req, res){
     } else {
       req.flash('success', 'New Client Created Successfully');
       console.log('product create successful!');
-      res.redirect('/admin');
+      res.redirect('/admin/'+req.body.category);
     }
   });
 

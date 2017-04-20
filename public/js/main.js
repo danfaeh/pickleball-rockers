@@ -2,11 +2,6 @@
 $('#error').hide();
 $('#itemAddText').hide();
 
-
-
-// $('#topArc').lettering();
-// $('#bottomArc').lettering();
-
 //*******************************************************//
 //                    Cart Updates                       //
 //*******************************************************//
@@ -47,7 +42,7 @@ function updateNavItems(){
 //*******************************************************//
 
 //*******************************************************//
-//                    Product Updates                    //
+//                Remove Products / Logos                //
 //*******************************************************//
 
 function removeProduct(productId){
@@ -65,6 +60,23 @@ function removeProduct(productId){
   });
 }
 
+function removeLogo(logoId){
+    console.log("inside AJAX function", logoId);
+  $.ajax({
+    type: "POST",
+    url: "/logos/remove",
+    data: {"logoId": logoId},
+    success: function(data) { 
+      if(data){
+     console.log("AJAX success logo remove");
+        window.location.reload(false);         
+      } else {
+        console.log("fail!!!! logo");
+      }  
+    }
+  });
+}
+
 //*******************************************************//
 //*******************************************************//
 //*******************************************************//
@@ -72,8 +84,6 @@ function removeProduct(productId){
 
 //On Page Load
 $(function(){ 
-
-  // $('#topArc').arctext({radius: 300});
 
   $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
   $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');});
