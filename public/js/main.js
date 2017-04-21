@@ -5,7 +5,7 @@ $('#error').hide();
 //                    Cart Updates                       //
 //*******************************************************//
 
-updateNavItems();
+// updateNavItems();
 
 function removeCartItem(item){
   localStorage.removeItem(item);
@@ -31,8 +31,14 @@ function addToCart(id,name,price){
 function updateNavItems(){
   var cartQuantity = 0;
   for(var lineItem in window.localStorage){
-    var lineItemQuantity = parseInt(JSON.parse(window.localStorage.getItem(lineItem)).quantity);
-    cartQuantity = cartQuantity + lineItemQuantity;
+    if(lineItem !== "key" && lineItem !== "getItem" && lineItem !== "setItem" && lineItem !== "removeItem" && lineItem !== "clear" && lineItem !== "length"){
+
+      var getItem = window.localStorage.getItem(lineItem);
+      var parsed = JSON.parse(getItem);
+      var lineItemQuantity = parseInt(parsed.quantity);
+
+      cartQuantity = cartQuantity + lineItemQuantity;
+    }
   }
   //Updated cartQuantity on Nav
   if(window.location.href.indexOf("auth") === -1){  
@@ -152,24 +158,27 @@ $(function(){
 
       //loop through Local Storage Cart Items and append them to the customer Cart. Also build cartItems array.
       for (var item in window.localStorage){
-        itemObj = JSON.parse(window.localStorage.getItem(item));
+        if(item !== "key" && item !== "getItem" && item !== "setItem" && item !== "removeItem" && item !== "clear" && item !== "length"){        
 
-        var paypalCartItem = {
-          "name": itemObj.name,
-          // "description": "Brown hat.",
-          "quantity": itemObj.quantity,
-          "price": itemObj.price,
-          // "tax": "0.00",
-          "sku": itemObj.id,
-          "currency": "USD"          
-        };
+          itemObj = JSON.parse(window.localStorage.getItem(item));
 
-        paypalCartItems.push(paypalCartItem);
+          var paypalCartItem = {
+            "sku": itemObj.id,
+            "name": itemObj.name,
+            "description": "Brown hat.",
+            "quantity": itemObj.quantity,
+            "price": itemObj.price,
+            // "tax": "0.00",
+            "currency": "USD"          
+          };
 
-        cartItemString = '<tr><td class="col-sm-8 col-md-6"><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a><div class="media-body"><h4 class="media-heading"><a href="#">'+itemObj.name+'</a></h4><h5 class="media-heading"> by <a href="#">Lyndee Lyndsey</a></h5><span>Status: </span><span class="text-success"><strong>In Stock</strong></span></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"><input type="number" class="form-control" id="quantity" value="'+itemObj.quantity+'" disabled></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+itemObj.price+'</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+itemObj.total+'</strong></td><td class="col-sm-1 col-md-1"><button type="button" class="btn btn-danger" onclick="removeCartItem(\''+itemObj.id+'\')"><span class="glyphicon glyphicon-remove"></span> Remove</button></td></tr>';
-        $('#cartList').prepend(cartItemString);
+          paypalCartItems.push(paypalCartItem);
 
-        subtotal = subtotal + (itemObj.price * itemObj.quantity);
+          cartItemString = '<tr><td class="col-sm-8 col-md-6"><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a><div class="media-body"><h4 class="media-heading"><a href="#">'+itemObj.name+'</a></h4><h5 class="media-heading"> by <a href="#">Lyndee Lyndsey</a></h5><span>Status: </span><span class="text-success"><strong>In Stock</strong></span></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"><input type="number" class="form-control" id="quantity" value="'+itemObj.quantity+'" disabled></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+itemObj.price+'</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+itemObj.total+'</strong></td><td class="col-sm-1 col-md-1"><button type="button" class="btn btn-danger" onclick="removeCartItem(\''+itemObj.id+'\')"><span class="glyphicon glyphicon-remove"></span> Remove</button></td></tr>';
+          $('#cartList').prepend(cartItemString);
+
+          subtotal = subtotal + (itemObj.price * itemObj.quantity);
+        }
       }
 
       var sum = subtotal+shipping;
@@ -209,8 +218,10 @@ $(function(){
                   // },
                   // "soft_descriptor": "ECHI5786786",
                   "item_list": {
-                  "items": paypalCartItems
-                  }
+                    "items": paypalCartItems
+                  },
+                  "description": "test", 
+                  "note_to_payee": "test" 
                 }
                 ]
 
