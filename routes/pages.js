@@ -8,28 +8,28 @@ router.get('/auth', function(req, res){
 });
 
 // Get Homepage
-router.get('/',ensureAuthenticated, function(req, res){
+router.get('/', function(req, res){
   res.render('home');
 });
 
 // Admin
-router.get('/admin', ensureAuthenticated, function(req, res){
+router.get('/admin', function(req, res){
   res.render('admin');
 });
 
-router.get('/about',ensureAuthenticated, function(req, res){
+router.get('/about', function(req, res){
   res.render('about');
 });
 
-router.get('/cart',ensureAuthenticated, function(req, res){
+router.get('/cart', function(req, res){
   res.render('cart');
 });
 
-router.get('/confirmation',ensureAuthenticated, function(req, res){
+router.get('/confirmation', function(req, res){
   res.render('confirmation');
 });
 
-router.post('/auth',ensureAuthenticated, function(req,res){
+router.post('/auth', function(req,res){
   res.send((req.body.pass === 'dunedin'));
 });
 

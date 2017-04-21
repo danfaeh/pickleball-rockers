@@ -3,21 +3,21 @@ var router = express.Router();
 var Logo = require('../models/logo.js');
 
 // Get all logos
-router.get('/', ensureAuthenticated, function(req, res){
+router.get('/', function(req, res){
   Logo.find({}, function(err, logos) {
     res.render('logos/alllogos', {logos: logos});
   });  
 });
 
 // Induvidual logo Page
-// router.get('/:logoId', ensureAuthenticated, function(req, res){
+// router.get('/:logoId', function(req, res){
 //   var id = req.params.logoId;
 //   Logo.find({id:id}, function(err, logo) {
 //     res.render('logos/logo', {logo: logo});
 //   });
 // });
 
-router.get('/admin', ensureAuthenticated, function(req, res){
+router.get('/admin', function(req, res){
   Logo.find({}, function(err, logos) {
     if(err){
       console.log("an error occured: ",err);
@@ -26,7 +26,7 @@ router.get('/admin', ensureAuthenticated, function(req, res){
   });    
 });
 
-router.post('/create', ensureAuthenticated, function(req, res){
+router.post('/create', function(req, res){
   var name  = req.body.name;
   var id = name.replace(/\s+/g, '-').toLowerCase();
 
@@ -49,7 +49,7 @@ router.post('/create', ensureAuthenticated, function(req, res){
 
 });
 
-router.post('/edit/:logoId', ensureAuthenticated, function(req, res){
+router.post('/edit/:logoId', function(req, res){
   Logo.findOneAndUpdate({id:req.body.id}, {
     id: req.body.id,
     name: req.body.name,
@@ -66,7 +66,7 @@ router.post('/edit/:logoId', ensureAuthenticated, function(req, res){
   });
 });
 
-router.post('/remove', ensureAuthenticated, function(req, res){
+router.post('/remove', function(req, res){
   console.log("inside logo route remove");
   Logo.findOneAndRemove({id:req.body.logoId }, function(err, logo) {
       if (err) {

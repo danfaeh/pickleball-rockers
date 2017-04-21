@@ -4,11 +4,11 @@ var Product = require('../models/product.js');
 var Logo = require('../models/logo.js');
 
 // Get products
-router.get('/', ensureAuthenticated, function(req, res){
+router.get('/', function(req, res){
   res.render('products/productCategories');
 });
 
-router.get('/Shirts/:productId', ensureAuthenticated, function(req, res){
+router.get('/Shirts/:productId', function(req, res){
   var id = req.params.productId;
   Product.find({id:id}, function(err, product) {
     Logo.find({}, function(err, logos) {
@@ -17,21 +17,21 @@ router.get('/Shirts/:productId', ensureAuthenticated, function(req, res){
   });
 });
 
-router.get('/Paddles/:productId', ensureAuthenticated, function(req, res){
+router.get('/Paddles/:productId', function(req, res){
   var id = req.params.productId;
   Product.find({id:id}, function(err, product) {
     res.render('products/paddle', {product: product});
   });
 });
 
-router.get('/Jewelry/:productId', ensureAuthenticated, function(req, res){
+router.get('/Jewelry/:productId', function(req, res){
   var id = req.params.productId;
   Product.find({id:id}, function(err, product) {
     res.render('products/jewelry', {product: product});
   });
 });
 
-router.get('/admin/:category', ensureAuthenticated, function(req, res){
+router.get('/admin/:category', function(req, res){
   var category = req.params.category;
   Product.find({category:category}, function(err, products) {
     if(err){
@@ -42,14 +42,14 @@ router.get('/admin/:category', ensureAuthenticated, function(req, res){
 });
 
 // Product category Page
-router.get('/:category', ensureAuthenticated, function(req, res){
+router.get('/:category', function(req, res){
   var category = req.params.category;
   Product.find({category:category}, function(err, products) {
     res.render('products/productCategory', {products: products,category:category});
   });   
 });
 
-router.post('/create', ensureAuthenticated, function(req, res){
+router.post('/create', function(req, res){
   var name  = req.body.name;
   var id = name.replace(/\s+/g, '-').toLowerCase();
 
@@ -75,7 +75,7 @@ router.post('/create', ensureAuthenticated, function(req, res){
 
 });
 
-router.post('/edit/:productId', ensureAuthenticated, function(req, res){
+router.post('/edit/:productId', function(req, res){
   var convertPrice = req.body.price * 100;
 
   Product.findOneAndUpdate({id:req.body.id}, {
@@ -95,7 +95,7 @@ router.post('/edit/:productId', ensureAuthenticated, function(req, res){
   });
 });
 
-router.post('/remove', ensureAuthenticated, function(req, res){
+router.post('/remove', function(req, res){
   Product.findOneAndRemove({id:req.body.productId }, function(err, product) {
       if (err) {
         res.redirect('/');
