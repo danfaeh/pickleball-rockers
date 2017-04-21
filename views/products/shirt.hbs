@@ -46,13 +46,13 @@
 
                                 <div class="col-xs-offset-2 col-xs-3">
                                     <label>Color</label>
-                                    <select id="womenColor" style="display:none;">
+                                    <select id="womenColor" class="colorChoice" style="display:none;">
                                       <option value="heather-purple">Heather Purple</option>
                                       <option value="heather-gray">Heather Gray</option>
                                       <option value="gray-space-dye">Gray Space Dye</option>
                                       <option value="turquoise-space-dye">Turquoise Space Dye</option>
                                     </select>                                    
-                                    <select id="menColor">
+                                    <select id="menColor" class="colorChoice">
                                       <option value="heather-gray">Heather Gray</option>
                                       <option value="black-space-dye">Black Space Dye</option>
                                       <option value="black">Black</option>
@@ -89,6 +89,33 @@
                                 </div>
                             </div>  
 
+                            <div class="row">
+
+                                <div class="col-xs-offset-1 col-xs-5">
+                                    <label>Custom Text?</label><br>
+                                    <select id="logoChoice">
+                                        <option value="Yes">Yes</option>
+                                        <option value="No">No</option>
+                                    </select>                                   
+                                </div>
+
+                                <div class="col-xs-5">
+                                    <label>Logo</label>
+                                    <select id="logoChoice">
+                                        <option value="PickleballRocker">Pickleball Rocker</option>
+                                        <option value="PickleballLover">Pickleball Lover</option>
+                                        <option value="custom">Custom</option>
+                                    </select>                                   
+                                </div>
+
+                            </div>                              
+
+
+
+                            <div class="row">
+                                <textarea name="Custom Lines" class="col-xs-offset-1" cols="50" rows="4" placeholder="Personalize Text: 3 lines, not to exceed 7 characters per line."></textarea>
+                            </div>
+
                         </div>
 
                         <!-- Bottom of grey box -->
@@ -97,7 +124,11 @@
  {{!--                            <h6><a href="#"><span class="glyphicon glyphicon-heart-empty" style="cursor:pointer;"></span> Add to Favorites</a></h6> --}}
 
                         </div> 
-                        <h4 id="itemAddText" >Added to Cart!</h4>                                       
+
+                        <div id="itemAddText" style="display:none;">
+                          <h4>Added to Cart!</h4> 
+                          <a href="/cart" class="btn btn-primary">View Cart</a>                                      
+                        </div>
                     </div>                              
 
                     <div class="col-xs-9">

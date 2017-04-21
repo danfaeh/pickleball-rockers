@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Product = require('../models/product.js');
+var Logo = require('../models/logo.js');
 
 // Get products
 router.get('/', ensureAuthenticated, function(req, res){
@@ -10,7 +11,9 @@ router.get('/', ensureAuthenticated, function(req, res){
 router.get('/Shirts/:productId', ensureAuthenticated, function(req, res){
   var id = req.params.productId;
   Product.find({id:id}, function(err, product) {
-    res.render('products/shirt', {product: product});
+    Logo.find({}, function(err, logos) {
+      res.render('products/shirt', {product: product, logos:logos});
+    });    
   });
 });
 

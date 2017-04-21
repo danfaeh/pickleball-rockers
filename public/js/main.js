@@ -1,6 +1,5 @@
 // hide before page loads
 $('#error').hide();
-$('#itemAddText').hide();
 
 //*******************************************************//
 //                    Cart Updates                       //
@@ -19,7 +18,11 @@ function addToCart(id,name,price){
 
   itemQuantity = $('#itemQuantity').val();
   var total = (itemQuantity*price).toFixed(2);
-  var cartItem = { 'id': id, 'name':name, 'quantity': itemQuantity, 'price':price, 'total':total};
+  var placement = $('#placement').val();
+  var sex = $('#sex').val();
+  var size = $('#sex').val() === "male" ? $('#menSize').val() : $('#womenSize').val();
+  var color = $('#sex').val() === "male" ? $('#menColor').val() : $('#womenColor').val();
+  var cartItem = { 'id': id, 'name':name, 'quantity': itemQuantity, 'price':price, 'total':total, 'sex':sex, 'size':size, 'color':color, 'placement':placement};
   // Put the object into storage
   localStorage.setItem(id, JSON.stringify(cartItem));
   updateNavItems();
