@@ -2,7 +2,7 @@
 
 <div class="container">
     <div class="well well-sm">
-        <strong>All Products</strong>
+        <strong>All {{category}}</strong>
         <div class="btn-group" role="group" aria-label="First group">
             <a href="/products/{{id}}" id="grid" class="btn btn-default btn-sm">
               <span class="glyphicon glyphicon-th"></span> Grid
@@ -18,7 +18,7 @@
 
             <div class="item  col-xs-4 col-lg-4">
                 <div class="thumbnail">
-                    <a href="/products/{{id}}">
+                    <a href="/products/{{category}}/{{id}}">
                         {{!-- <img class="group list-group-image" src="../public/images/products/1x/{{imgExtension}}" alt="" /> --}}
                         <img class="group list-group-image" src="{{imgURL}}" alt="" />
                     </a>

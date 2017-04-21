@@ -4,15 +4,27 @@ var Product = require('../models/product.js');
 
 // Get products
 router.get('/', ensureAuthenticated, function(req, res){
-  Product.find({}, function(err, products) {
-    res.render('products/allproducts', {products: products});
-  });  
+  res.render('products/productCategories');
 });
 
-router.get('/:productId', ensureAuthenticated, function(req, res){
+router.get('/Shirts/:productId', ensureAuthenticated, function(req, res){
   var id = req.params.productId;
   Product.find({id:id}, function(err, product) {
-    res.render('products/product', {product: product});
+    res.render('products/shirt', {product: product});
+  });
+});
+
+router.get('/Paddles/:productId', ensureAuthenticated, function(req, res){
+  var id = req.params.productId;
+  Product.find({id:id}, function(err, product) {
+    res.render('products/paddle', {product: product});
+  });
+});
+
+router.get('/Jewelry/:productId', ensureAuthenticated, function(req, res){
+  var id = req.params.productId;
+  Product.find({id:id}, function(err, product) {
+    res.render('products/jewelry', {product: product});
   });
 });
 
@@ -24,6 +36,14 @@ router.get('/admin/:category', ensureAuthenticated, function(req, res){
     }
     res.render('products/edit', {products: products,category:category});
   });    
+});
+
+// Product category Page
+router.get('/:category', ensureAuthenticated, function(req, res){
+  var category = req.params.category;
+  Product.find({category:category}, function(err, products) {
+    res.render('products/productCategory', {products: products,category:category});
+  });   
 });
 
 router.post('/create', ensureAuthenticated, function(req, res){

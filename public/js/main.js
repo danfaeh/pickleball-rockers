@@ -81,6 +81,21 @@ function removeLogo(logoId){
 //*******************************************************//
 //*******************************************************//
 
+function changeSex(){
+  var sex = $('#sex').val();
+  if (sex =="male"){
+    $('#menColor').show();
+    $('#womenColor').hide();    
+    $('#menSize').show();
+    $('#womenSize').hide();
+  } 
+  else{
+    $('#womenColor').show();
+    $('#menColor').hide();
+    $('#womenSize').show();
+    $('#menSize').hide();    
+  }  
+}
 
 //On Page Load
 $(function(){ 
