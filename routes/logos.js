@@ -27,9 +27,12 @@ router.get('/admin', ensureAuthenticated, function(req, res){
 });
 
 router.post('/create', ensureAuthenticated, function(req, res){
+  var name  = req.body.name;
+  var id = name.replace(/\s+/g, '-').toLowerCase();
+
   logoObj = {
-    id: req.body.id,
-    name: req.body.name,
+    id: id,
+    name: name,
     imgURL: req.body.imgURL
   };
 

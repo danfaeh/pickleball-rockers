@@ -47,11 +47,12 @@ router.get('/:category', ensureAuthenticated, function(req, res){
 });
 
 router.post('/create', ensureAuthenticated, function(req, res){
-  var convertPrice = req.body.price * 100;
+  var name  = req.body.name;
+  var id = name.replace(/\s+/g, '-').toLowerCase();
 
   productObj = {
-    id: req.body.id,
-    name: req.body.name,
+    id: id,
+    name: name,
     description: req.body.description,
     category: req.body.category,
     price: req.body.price,
