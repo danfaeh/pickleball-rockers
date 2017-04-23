@@ -27,15 +27,30 @@
                             </div>
                         </div>   --}}
                         <div class="section" style="padding-bottom:20px;">
-                            <br>
-                            <label class="text-center">Quantity</label>                   
-                            <div id="quantity">
-                                <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
-                                <input id="itemQuantity" value="1" />
-                                <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
-                            </div><br>
-
                             <div class="row">
+                                    <label class="col-xs-offset-1 col-xs-3">Quantity</label>                   
+                                    <label class="col-xs-offset-2 col-xs-3">Logo</label>
+                            </div>
+                            
+                            {{!-- <div id="productFirstRow"> --}}
+                                <div id="quantity">
+                                    <div class="btn-minus"><span class="glyphicon glyphicon-minus"></span></div>
+                                    <input id="itemQuantity" value="1" />
+                                    <div class="btn-plus"><span class="glyphicon glyphicon-plus"></span></div>
+                                </div>
+
+                                <div>
+                                    <select id="logoChoice" class="col-xs-offset-6 col-xs-4">
+                                        <option value="asPictured">As Pictured</option>
+                                        <option value="PickleballRocker">Pickleball Rockers</option>
+                                        <option value="PickleballLover">Pickleball Lover</option>
+                                    </select>                                   
+                                </div>                             
+                            {{!-- </div> --}}
+                                
+                            <br>
+
+                            <div class="row productRow">
                                 <div class="col-xs-offset-1 col-xs-3">
                                     <label>Sex</label>
                                     <select id="sex" onchange="changeSex();">
@@ -44,24 +59,16 @@
                                     </select>
                                 </div>
 
-                                <div class="col-xs-offset-2 col-xs-3">
-                                    <label>Color</label>
-                                    <select id="womenColor" class="colorChoice" style="display:none;">
-                                      <option value="heather-purple">Heather Purple</option>
-                                      <option value="heather-gray">Heather Gray</option>
-                                      <option value="gray-space-dye">Gray Space Dye</option>
-                                      <option value="turquoise-space-dye">Turquoise Space Dye</option>
-                                    </select>                                    
-                                    <select id="menColor" class="colorChoice">
-                                      <option value="heather-gray">Heather Gray</option>
-                                      <option value="black-space-dye">Black Space Dye</option>
-                                      <option value="black">Black</option>
-                                      <option value="blue">Blue</option>
-                                    </select>
-                                </div>
+                                <div class="col-xs-offset-2 col-xs-5">
+                                    <label>Custom Paddle Text?</label><br>
+                                    <select id="customTextChoice" onchange="addCustomText();">
+                                        <option value="No">No</option>
+                                        <option value="Yes">Yes</option>
+                                    </select>                                   
+                                </div>                                
                             </div>
 
-                            <div class="row">
+                            <div class="row productRow">
                                 <div class="col-xs-offset-1 col-xs-3">
                                     <label>Size</label>
                                     <select id="menSize">
@@ -77,8 +84,42 @@
                                     </select>                                    
                                 </div>
 
-                                <div class="col-xs-offset-2 col-xs-3">
-                                    <label>Placement</label>
+                              <div style="display:none;" class="customLines form-group col-xs-offset-2 col-xs-5">
+                                <label>Line 1</label>
+                                <input type="text" class="form-control" placeholder="Line 1" id="line1" name="line1" size="70">
+                              </div>
+
+                            </div>  
+
+                            <div class="row productRow">
+
+                                <div class="col-xs-offset-1 col-xs-3">
+                                    <label>Color</label>
+                                    <select id="womenColor" class="colorChoice" style="display:none;">
+                                      <option value="heather-purple">Heather Purple</option>
+                                      <option value="heather-gray">Heather Gray</option>
+                                      <option value="gray-space-dye">Gray Space Dye</option>
+                                      <option value="turquoise-space-dye">Turquoise Space Dye</option>
+                                    </select>                                    
+                                    <select id="menColor" class="colorChoice">
+                                      <option value="heather-gray">Heather Gray</option>
+                                      <option value="black-space-dye">Black Space Dye</option>
+                                      <option value="black">Black</option>
+                                      <option value="blue">Blue</option>
+                                    </select>
+                                </div>
+
+                              <div style="display:none;" class="customLines form-group col-xs-offset-2 col-xs-5">
+                                <label>Line 2</label>
+                                <input type="text" class="form-control" placeholder="Line 2" id="line2" name="line2">
+                              </div>
+
+                            </div>
+
+                            <div class="row productRow">
+                                
+                                <div class="col-xs-offset-1 col-xs-4">
+                                    <label>Logo Placement</label>
                                     <select id="placement">
                                       <option value="left-shoulder">Left Shoulder</option>
                                       <option value="right-shoulder">Right Shoulder</option>
@@ -87,33 +128,15 @@
                                       <option value="right-sleeve">Right Sleeve</option>
                                     </select>
                                 </div>
-                            </div>  
+      
+                               <div style="display:none;" class="customLines form-group col-xs-offset-1 col-xs-5" >
+                                <label>Line 3</label>
+                                <input type="email" class="form-control" placeholder="Line 3" id="line3" name="line3">
+                              </div>
 
-                            <div class="row">
-
-                                <div class="col-xs-offset-1 col-xs-5">
-                                    <label>Custom Text?</label><br>
-                                    <select id="customTextChoice">
-                                        <option value="Yes">Yes</option>
-                                        <option value="No">No</option>
-                                    </select>                                   
-                                </div>
-
-                                <div class="col-xs-5">
-                                    <label>Logo</label>
-                                    <select id="logoChoice">
-                                        <option value="custom">As Pictured</option>
-                                        <option value="PickleballRocker">Pickleball Rockers</option>
-                                        <option value="PickleballLover">Pickleball Lover</option>
-                                    </select>                                   
-                                </div>
-
-                            </div>                              
+                            </div>                          
 
 
-                            <div class="row">
-                                <textarea id="customLines" class="col-xs-offset-1" cols="50" rows="4" placeholder="Personalize Text: 3 lines, not to exceed 7 characters per line."></textarea>
-                            </div>
 
                         </div>
 
