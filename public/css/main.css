@@ -36,6 +36,10 @@
     height: 7em;
 }
 
+.nav li {
+  font-weight: 300;
+}
+
 #socialNav{
     background-color: rgba(167, 230, 118, 1);  
     margin-bottom: 0;

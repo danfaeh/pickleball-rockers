@@ -1,0 +1,44 @@
+  {{> nav}}
+
+<div class="container">
+
+    <h2 class="text-center">Edit About Page</h2><hr>
+
+    <div id="aboutEdit" class="row list-group">
+
+        {{#each about}}
+            <div class="item list-group-item col-xs-4 col-lg-4">
+                <div class="thumbnail">
+                    <img class="group list-group-image" src="{{heroImg}}" alt="" />
+                    <div class="caption">
+                        <form method="POST" action="/about">
+                          <input type="text" class="hidden" value="{{id}}" name="id">                           
+                          <div class="form-group">
+                            <label>Title</label>
+                            <input type="text" class="group inner" placeholder="Title" value="{{title}}" name="title" size="40">
+                          </div>
+
+                          <div class="form-group">
+                            <label>Description</label><br>
+                            <textarea cols="110" rows="5" class="group inner" placeholder="Description" id="description" name="description">{{description}}</textarea>
+                          </div>
+
+                          <div class="form-group">
+                            <label>Sign Off</label>
+                            <input type="text" class="group inner" placeholder="Sign Off" value="{{signOff}}" name="signOff" size="90">
+                          </div>                          
+
+                          <div class="form-group">
+                            <label>Image Direct Link</label>
+                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{heroImg}}" name="heroImg" size="40">
+                          </div>                          
+                          <button type="submit" class="btn btn-primary">Update About</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+
+    </div>
+    
+</div>
