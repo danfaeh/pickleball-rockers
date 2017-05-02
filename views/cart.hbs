@@ -1,7 +1,6 @@
 {{> nav}}
 
-<div class="container">
-    <h2 class="page-header">My Cart</h2>
+ <h2 class="page-header col-md-offset-1">My Cart</h2>
 
     <div id="emptyCart" style="display:none;">
         <h4 class="text-center">Your cart is empty</h4>
@@ -49,18 +48,13 @@
                         <td>
                         <a href="/products" class="btn btn-default" role="button"><span class="glyphicon glyphicon-shopping-cart"></span>Continue Shopping</a></td>
                         <td>   
-
-                        <div id="paypal-button"></div>
-
-{{!--                         <button type="button" onclick="test123()" class="btn btn-success" id="paypal-button">
-                            Checkout <span class="glyphicon glyphicon-play"></span>
-                        </button> --}}</td>
+                            <div id="paypal-button"></div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-</div>
 
 <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
