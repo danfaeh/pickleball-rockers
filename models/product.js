@@ -5,9 +5,10 @@ var ProductSchema = mongoose.Schema({
   name: String,
   description: String,
   price: Number,
-  available: Boolean,
+  available: String,
   category: String,
   imgExtension: String,
+  imgThumb: String,
   imgURL: String
 });
 

@@ -4,6 +4,7 @@ var LogoSchema = mongoose.Schema({
   id: String,
   name: String,
   imgURL: String,
+  imgThumb: String,
   imgExtension: String  
 });
 

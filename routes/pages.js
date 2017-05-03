@@ -53,6 +53,10 @@ router.get('/cart', function(req, res){
   res.render('cart');
 });
 
+router.get('/checkout', function(req, res){
+  res.render('checkout');
+});
+
 router.get('/confirmation', function(req, res){
   res.render('confirmation');
 });

@@ -53,6 +53,7 @@ router.post('/edit/:logoId', function(req, res){
   Logo.findOneAndUpdate({id:req.body.id}, {
     id: req.body.id,
     name: req.body.name,
+    imgThumb: req.body.imgThumb,
     imgURL: req.body.imgURL
   }, function(err, logo) {
     if (err) {

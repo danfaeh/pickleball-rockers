@@ -1,8 +1,8 @@
   {{> nav}}
 
-<div class="container">
-
     <h2 class="text-center">Edit {{category}}</h2><hr>
+
+<div class="container">
 
     <div id="products" class="row list-group">
 
@@ -10,29 +10,43 @@
             <div class="item list-group-item col-xs-4 col-lg-4">
                 <div class="thumbnail">
                     <img class="group list-group-image" src="{{imgURL}}" alt="" />
-                    <div class="caption">
-                        <form method="POST" action="/products/edit/{{id}}">
-                          <input type="text" class="hidden" value="{{id}}" name="id">                           
-                          <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="group inner" placeholder="Product Name" value="{{name}}" name="name" size="40">
-                          </div>
-                           <div class="form-group">
-                            <label for="description">Description</label><br>
-                            <textarea cols="70" rows="3" class="group inner" placeholder="Product Description" id="description" name="description">{{description}}</textarea>
-                          </div>
-                          <div class="form-group">
-                            <label>Price</label>
-                            <input type="text" class="group inner" placeholder="Price" value="{{price}}" name="price">
-                          </div>
-                          <div class="form-group">
-                            <label>Image Direct Link</label>
-                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{imgURL}}" name="imgURL" size="40">
-                          </div>                          
-                          <button type="submit" class="btn btn-primary">Update Product</button>
-                          <button type="button" onclick="removeProduct('{{id}}')" class="btn btn-danger pull-right">Remove Product</button>
-                        </form>
-                    </div>
+                </div>
+                <div class="caption col-xs-offset-3">
+                    <form method="POST" action="/products/edit/{{id}}">
+                      <input type="text" class="hidden" value="{{id}}" name="id">                           
+                      <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" class="group inner" placeholder="Product Name" value="{{name}}" name="name" size="40">
+                      </div>
+                       <div class="form-group">
+                        <label for="description">Description</label><br>
+                        <textarea cols="70" rows="3" class="group inner" placeholder="Product Description" id="description" name="description">{{description}}</textarea>
+                      </div>
+                      <div class="form-group">
+                        <label>Price</label>
+                        <input type="text" class="group inner" placeholder="Price" value="{{price}}" name="price">
+                      </div>
+                      <div class="form-group">
+                        <label>Available</label>
+                        {{!-- class="col-xs-offset-6 col-xs-4" --}}
+                        <select id="availableChoice" name="available" value="{{available}}">
+                            <option value="inStock">In Stock</option>
+                            <option value="backOrdered">Back Ordered</option>
+                            <option value="notAvailable">Not Available</option>
+                        </select>  
+
+                      </div>
+                      <div class="form-group">
+                        <label>Image Direct Link</label>
+                        <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{imgURL}}" name="imgURL" size="40">
+                      </div>                           
+                      <div class="form-group">
+                        <label>Thumb Image Link</label>
+                        <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{imgThumb}}" name="imgThumb" size="40">
+                      </div>                          
+                      <button type="submit" class="btn btn-primary">Update Product</button>
+                      <button type="button" onclick="removeProduct('{{id}}')" class="btn btn-danger pull-right">Remove Product</button>
+                    </form>
                 </div>
             </div>
         {{/each}}

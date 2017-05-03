@@ -13,7 +13,7 @@ function removeCartItem(item){
   window.location.reload(false); 
 }
 
-function addToCart(id,name,price){
+function addToCart(id,name,price,imgThumb){
   $('#itemAddText').show();
 
   var itemQuantity = $('#itemQuantity').val();
@@ -32,7 +32,7 @@ function addToCart(id,name,price){
     customLines = line1 + ", " + line2 + ", " + line3;
   }
 
-  var cartItem = { 'id': id, 'name':name, 'quantity': itemQuantity, 'price':price, 'total':total, 'sex':sex, 'size':size, 'color':color, 'placement':placement, 'logo':logo, 'customLines':customLines};
+  var cartItem = { 'id': id, 'name':name, 'quantity': itemQuantity, 'price':price, 'total':total, 'sex':sex, 'size':size, 'color':color, 'placement':placement, 'logo':logo, 'customLines':customLines, 'imgThumb':imgThumb};
   // Put the object into storage
   localStorage.setItem(id, JSON.stringify(cartItem));
   updateNavItems();
@@ -199,7 +199,7 @@ $(function(){
 
           paypalCartItems.push(paypalCartItem);
 
-          cartItemString = '<tr><td class="col-sm-8 col-md-6"><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="http://icons.iconarchive.com/icons/custom-icon-design/flatastic-2/72/product-icon.png" style="width: 72px; height: 72px;"> </a><div class="media-body"><h4 class="media-heading"><a href="#">'+itemObj.name+'</a></h4><h5 class="media-heading"> by <a href="#">Lyndee Lyndsey</a></h5><span>Status: </span><span class="text-success"><strong>In Stock</strong></span></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"><input type="number" class="form-control" id="cartQuantity" value="'+itemObj.quantity+'" disabled></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+itemObj.price+'</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+itemObj.total+'</strong></td><td class="col-sm-1 col-md-1"><button type="button" class="btn btn-danger" onclick="removeCartItem(\''+itemObj.id+'\')"><span class="glyphicon glyphicon-remove"></span> Remove</button></td></tr>';
+          cartItemString = '<tr><td class="col-sm-8 col-md-6"><div class="media"><a class="thumbnail pull-left" href="#"> <img class="media-object" src="'+itemObj.imgThumb+'" style="width: 72px; height: 72px;"> </a><div class="media-body"><h4 class="media-heading"><a href="#">'+itemObj.name+'</a></h4><h5 class="media-heading"> by <a href="#">Lyndee Lyndsey</a></h5><span>Status: </span><span class="text-success"><strong>In Stock</strong></span></div></div></td><td class="col-sm-1 col-md-1" style="text-align: center"><input type="number" class="form-control" id="cartQuantity" value="'+itemObj.quantity+'" disabled></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+itemObj.price+'</strong></td><td class="col-sm-1 col-md-1 text-center"><strong>$'+itemObj.total+'</strong></td><td class="col-sm-1 col-md-1"><button type="button" class="btn btn-danger" onclick="removeCartItem(\''+itemObj.id+'\')"><span class="glyphicon glyphicon-remove"></span> Remove</button></td></tr>';
           $('#cartList').prepend(cartItemString);
 
           subtotal = subtotal + (itemObj.price * itemObj.quantity);

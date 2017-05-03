@@ -82,7 +82,9 @@ router.post('/edit/:productId', function(req, res){
     name: req.body.name,
     description: req.body.description,
     price: convertPrice,
-    imgURL: req.body.imgURL
+    available: req.body.available,
+    imgURL: req.body.imgURL,
+    imgThumb: req.body.imgThumb
   }, function(err, product) {
     if (err) {
       res.redirect('/');
