@@ -33,7 +33,8 @@ router.post('/create', function(req, res){
   logoObj = {
     id: id,
     name: name,
-    imgURL: req.body.imgURL
+    imgURL: req.body.imgURL,
+    imgThumb: req.body.imgThumb
   };
 
   Logo.create(logoObj, function(err, logo) {

@@ -59,7 +59,8 @@ router.post('/create', function(req, res){
     description: req.body.description,
     category: req.body.category,
     price: req.body.price,
-    imgURL: req.body.imgURL
+    imgURL: req.body.imgURL,
+    imgThumb: req.body.imgThumb
   };
 
   Product.create(productObj, function(err, product) {
