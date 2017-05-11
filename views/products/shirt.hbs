@@ -48,11 +48,15 @@
                                 </div>
 
                                 <div>
-                                    <select id="logoChoice" class="col-xs-offset-6 col-xs-4">
+                                    {{!-- <select id="logoChoice" class="col-xs-offset-6 col-xs-4">
                                         <option value="asPictured">As Pictured</option>
                                         <option value="PickleballRocker">Pickleball Rockers</option>
                                         <option value="PickleballLover">Pickleball Lover</option>
-                                    </select>                                   
+                                    </select>  --}}  
+                                  <div id="logoChoice" class="form-group col-xs-offset-5 col-xs-6">
+                                    <input type="text" class="form-control" placeholder="ex: Arizona" id="logoChoice" name="logoChoice">
+                                  </div>
+
                                 </div>                             
                             {{!-- </div> --}}
                                 
@@ -137,9 +141,9 @@
                                     </select>
                                 </div>
       
-                               <div style="display:none;" class="customLines form-group col-xs-offset-1 col-xs-5" >
+                              <div style="display:none;" class="customLines form-group col-xs-offset-1 col-xs-5" >
                                 <label>Line 3</label>
-                                <input type="email" class="form-control" placeholder="Line 3" id="line3" name="line3">
+                                <input type="text" class="form-control" placeholder="Line 3" id="line3" name="line3">
                               </div>
 
                             </div>                          
