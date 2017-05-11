@@ -79,6 +79,8 @@ router.post('/create', function(req, res){
 router.post('/edit/:productId', function(req, res){
   var convertPrice = req.body.price * 100;
 
+  console.log(req.body);
+
   Product.findOneAndUpdate({id:req.body.id}, {
     name: req.body.name,
     description: req.body.description,
