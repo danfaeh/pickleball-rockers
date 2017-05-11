@@ -29,7 +29,7 @@ function addToCart(id,name,price,imgThumb){
     var line1 = $('#line1').val();
     var line2 = $('#line2').val();
     var line3 = $('#line3').val();
-    customLines = line1 + ", " + line2 + ", " + line3;
+    customLines = "Line1: "+ line1 + ", Line2: " + line2 + ", Line3: " + line3;
   }
 
   var cartItem = { 'id': id, 'name':name, 'quantity': itemQuantity, 'price':price, 'total':total, 'sex':sex, 'size':size, 'color':color, 'placement':placement, 'logo':logo, 'customLines':customLines, 'imgThumb':imgThumb};
