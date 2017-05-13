@@ -1,6 +1,6 @@
 #homeBackdrop{
     height: 85vh;
-    margin-top: -2.6em;
+    margin-top: -4em;
 }
 
 #home1{
@@ -45,6 +45,16 @@
     margin-bottom: 0;
     border: none;
     max-height: 2.4em;
+}
+
+#disclaimer{
+  color:white;
+  margin-top: -1em;
+}
+
+.homebtns{
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .homeInfo{
