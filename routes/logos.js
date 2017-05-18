@@ -17,7 +17,7 @@ router.get('/', function(req, res){
 //   });
 // });
 
-router.get('/admin', function(req, res){
+router.get('/admin', ensureAdmin, function(req, res){
   Logo.find({}, function(err, logos) {
     if(err){
       console.log("an error occured: ",err);
@@ -26,7 +26,7 @@ router.get('/admin', function(req, res){
   });    
 });
 
-router.post('/create', function(req, res){
+router.post('/create', ensureAdmin, function(req, res){
   var name  = req.body.name;
   var id = name.replace(/\s+/g, '-').toLowerCase();
 
@@ -50,7 +50,7 @@ router.post('/create', function(req, res){
 
 });
 
-router.post('/edit/:logoId', function(req, res){
+router.post('/edit/:logoId', ensureAdmin, function(req, res){
   Logo.findOneAndUpdate({id:req.body.id}, {
     id: req.body.id,
     name: req.body.name,
@@ -68,8 +68,7 @@ router.post('/edit/:logoId', function(req, res){
   });
 });
 
-router.post('/remove', function(req, res){
-  console.log("inside logo route remove");
+router.post('/remove', ensureAdmin, function(req, res){
   Logo.findOneAndRemove({id:req.body.logoId }, function(err, logo) {
       if (err) {
         res.redirect('/');
@@ -90,16 +89,31 @@ router.post('/remove', function(req, res){
 //   }
 // }
 
-function ensureAuthenticated(req, res, next){  
-  if(req.headers.cookie){
-    if(req.headers.cookie.search("dunedin") !== -1 ){
+
+function ensureAdmin(req, res, next){  
+  if(req.user){
+    if(req.isAuthenticated() && req.user.name === "admin"){
       return next();
     } else {
-      res.redirect("/auth");
+        req.flash('error_msg','You are not logged in');
+        res.render('users/unauthorized');
     }
-  }  else {
-      res.redirect("/auth");
-    }
+  } else {
+        req.flash('error_msg','You are not logged in');
+        res.render('users/unauthorized');
+    }  
 }
+
+// function ensureAuthenticated(req, res, next){  
+//   if(req.headers.cookie){
+//     if(req.headers.cookie.search("dunedin") !== -1 ){
+//       return next();
+//     } else {
+//       res.redirect("/auth");
+//     }
+//   }  else {
+//       res.redirect("/auth");
+//     }
+// }
 
 module.exports = router;
