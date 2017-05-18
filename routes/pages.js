@@ -14,35 +14,36 @@ router.get('/', function(req, res){
 });
 
 // Admin
-router.get('/admin', function(req, res){
+router.get('/admin', ensureAdmin, function(req, res){
   res.render('admin');
 });
 
 router.get('/about', function(req, res){
   About.find({}, function(err, about) {
-    res.render('about', {about: about});
+      res.render('about', {about: about, aboutPics: about[0].aboutPics});    
   });    
 });
 
-router.get('/about/admin', function(req, res){
+router.get('/about/admin', ensureAdmin, function(req, res){
   About.find({}, function(err, about) {
-    res.render('admin/about', {about: about});
+    res.render('admin/about', {about: about, aboutPics: about[0].aboutPics});
   });   
 });
 
 router.post('/about', function(req, res){
+  console.log("req.body.pic1",req.body.pic1);
+  console.log("req.body",req.body);
   About.findOneAndUpdate({id:req.body.id}, {
     id: req.body.id,
     title: req.body.title,
     description: req.body.description,
     signOff: req.body.signOff,
-    heroImg: req.body.heroImg
+    aboutPics: [req.body.pic0,req.body.pic1,req.body.pic2]
   }, function(err, about) {
     if (err) {
       res.redirect('/');
       console.log("error: " + err);
     } else {
-      console.log('About Page Has Been Updated', about);
       req.flash('success', 'Logo Has Been Updated');
       res.redirect('/about/admin');
     }
@@ -74,16 +75,30 @@ router.post('/auth', function(req,res){
 //   }
 // }
 
-function ensureAuthenticated(req, res, next){  
-  if(req.headers.cookie){
-    if(req.headers.cookie.search("dunedin") !== -1 ){
+function ensureAdmin(req, res, next){  
+  if(req.user){
+    if(req.isAuthenticated() && req.user.name === "admin"){
       return next();
     } else {
-      res.redirect("/auth");
+        req.flash('error_msg','You are not logged in');
+        res.render('users/unauthorized');
     }
-  }  else {
-      res.redirect("/auth");
-    }
+  } else {
+        req.flash('error_msg','You are not logged in');
+        res.render('users/unauthorized');
+    }  
 }
+
+// function ensureAuthenticated(req, res, next){  
+//   if(req.headers.cookie){
+//     if(req.headers.cookie.search("dunedin") !== -1 ){
+//       return next();
+//     } else {
+//       res.redirect("/auth");
+//     }
+//   }  else {
+//       res.redirect("/auth");
+//     }
+// }
 
 module.exports = router;

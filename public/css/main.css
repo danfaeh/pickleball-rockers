@@ -231,7 +231,7 @@ font-size: 24px;
     margin-top: 0;
 }
 
-#viewProducts{
+.buttonMiddle{
     display: table;
     margin: 0 auto;
 }

@@ -177,6 +177,7 @@ $(function(){
 
       var subtotal = 0;
       var shipping = 10;
+      var handling = 5;
       var paypalCartItems=[];
 
       //loop through Local Storage Cart Items and append them to the customer Cart. Also build cartItems array.
@@ -192,7 +193,7 @@ $(function(){
             "name": itemObj.name,
             "description": description,
             "quantity": itemObj.quantity,
-            "price": itemObj.price,
+            "price": itemObj.price * 0.85,
             // "tax": "0.00",
             "currency": "USD"          
           };
@@ -206,8 +207,9 @@ $(function(){
         }
       }
 
-      var sum = subtotal+shipping;
-      var total = sum.toFixed(2);
+      subtotal = subtotal * 0.85;
+      var sum = subtotal+shipping+handling;
+      var total = sum.toFixed(2);      
 
       $('#cartSubtotal')[0].textContent = "$ "+subtotal.toFixed(2);
       $('#cartTotal')[0].textContent = "$ "+total;
@@ -232,8 +234,9 @@ $(function(){
                   "details": {
                     "subtotal": subtotal,
                     // "tax": "0.07",
+                    "handling_fee": handling,
                     "shipping": shipping
-                  }
+                    },
                   },
                   "description": "The payment transaction description.",
                   // "custom": "EBAY_EMS_90048630024435",

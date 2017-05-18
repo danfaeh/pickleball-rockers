@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var AboutSchema = mongoose.Schema({
   id: String,
-  heroImg: String,
+  aboutPics: [String],
   title: String,
   description: String,
   signOff: String  

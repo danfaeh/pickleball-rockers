@@ -6,7 +6,7 @@
 
     <div id="aboutEdit" class="row list-group">
 
-        {{#each about}}
+        {{#about}}
             <div class="item list-group-item col-xs-4 col-lg-4">
                 <div class="thumbnail">
                     <img class="group list-group-image" src="{{heroImg}}" alt="" />
@@ -28,16 +28,19 @@
                             <input type="text" class="group inner" placeholder="Sign Off" value="{{signOff}}" name="signOff" size="90">
                           </div>                          
 
-                          <div class="form-group">
-                            <label>Image Direct Link</label>
-                            <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{heroImg}}" name="heroImg" size="40">
-                          </div>                          
-                          <button type="submit" class="btn btn-primary">Update About</button>
+                          {{#each aboutPics}}
+                            <div class="form-group">
+                              <label>About Image Direct Link</label>
+                              <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{this}}" name="pic{{@index}}" size="40">
+                            </div>      
+                          {{/each}}
+
+                          <button type="submit" class="btn btn-primary buttonMiddle">Update About</button>
                         </form>
                     </div>
                 </div>
             </div>
-        {{/each}}
+        {{/about}}
 
     </div>
     

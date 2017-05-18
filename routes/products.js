@@ -31,7 +31,7 @@ router.get('/Jewelry/:productId', function(req, res){
   });
 });
 
-router.get('/admin/:category', function(req, res){
+router.get('/admin/:category', ensureAdmin, function(req, res){
   var category = req.params.category;
   Product.find({category:category}, function(err, products) {
     if(err){
@@ -45,11 +45,16 @@ router.get('/admin/:category', function(req, res){
 router.get('/:category', function(req, res){
   var category = req.params.category;
   Product.find({category:category}, function(err, products) {
-    res.render('products/productCategory', {products: products,category:category});
+    console.log("inside",typeof products);
+    if(Object.keys(products).length === 0){
+      res.send("Whoops. Page Not Found");
+    } else{
+      res.render('products/productCategory', {products: products,category:category});
+    }
   });   
 });
 
-router.post('/create', function(req, res){
+router.post('/create', ensureAdmin, function(req, res){
   var name  = req.body.name;
   var id = name.replace(/\s+/g, '-').toLowerCase();
 
@@ -76,7 +81,7 @@ router.post('/create', function(req, res){
 
 });
 
-router.post('/edit/:productId', function(req, res){
+router.post('/edit/:productId', ensureAdmin, function(req, res){
   var convertPrice = req.body.price * 100;
 
   console.log(req.body);
@@ -100,7 +105,7 @@ router.post('/edit/:productId', function(req, res){
   });
 });
 
-router.post('/remove', function(req, res){
+router.post('/remove', ensureAdmin, function(req, res){
   Product.findOneAndRemove({id:req.body.productId }, function(err, product) {
       if (err) {
         res.redirect('/');
@@ -121,16 +126,30 @@ router.post('/remove', function(req, res){
 //   }
 // }
 
-function ensureAuthenticated(req, res, next){  
-  if(req.headers.cookie){
-    if(req.headers.cookie.search("dunedin") !== -1 ){
+function ensureAdmin(req, res, next){  
+  if(req.user){
+    if(req.isAuthenticated() && req.user.name === "admin"){
       return next();
     } else {
-      res.redirect("/auth");
+        req.flash('error_msg','You are not logged in');
+        res.render('users/unauthorized');
     }
-  }  else {
-      res.redirect("/auth");
-    }
+  } else {
+        req.flash('error_msg','You are not logged in');
+        res.render('users/unauthorized');
+    }  
 }
+
+// function ensureAuthenticated(req, res, next){  
+//   if(req.headers.cookie){
+//     if(req.headers.cookie.search("dunedin") !== -1 ){
+//       return next();
+//     } else {
+//       res.redirect("/auth");
+//     }
+//   }  else {
+//       res.redirect("/auth");
+//     }
+// }
 
 module.exports = router;
