@@ -80,7 +80,6 @@ function removeProduct(productId){
 }
 
 function removeLogo(logoId){
-    console.log("inside AJAX function", logoId);
   $.ajax({
     type: "POST",
     url: "/logos/remove",
@@ -269,7 +268,6 @@ $(function(){
   }
 
   function sendConfirmationEmail(orderItems){
-    console.log("inside sendConfirmationEmail",orderItems);
     $.ajax({
       type: "POST",
       url: "/orderConfirmation",

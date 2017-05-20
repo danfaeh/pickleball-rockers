@@ -172,7 +172,6 @@ $(function(){
   }
 
   function sendConfirmationEmail(orderItems){
-    console.log("inside sendConfirmationEmail",orderItems);
     $.ajax({
       type: "POST",
       url: "/orderConfirmation",

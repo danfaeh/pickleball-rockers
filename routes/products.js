@@ -45,7 +45,6 @@ router.get('/admin/:category', ensureAdmin, function(req, res){
 router.get('/:category', function(req, res){
   var category = req.params.category;
   Product.find({category:category}, function(err, products) {
-    console.log("inside",typeof products);
     if(Object.keys(products).length === 0){
       res.send("Whoops. Page Not Found");
     } else{
