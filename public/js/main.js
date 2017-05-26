@@ -175,7 +175,7 @@ $(function(){
       $('#cartTable').show();
 
       var subtotal = 0;
-      var shipping = 10;
+      // var shipping = 10;
       var handling = 5;
       var paypalCartItems=[];
 
@@ -207,7 +207,7 @@ $(function(){
       }
 
       subtotal = subtotal * 0.85;
-      var sum = subtotal+shipping+handling;
+      var sum = subtotal+handling;
       var total = sum.toFixed(2);      
 
       $('#cartSubtotal')[0].textContent = "$ "+subtotal.toFixed(2);
@@ -234,7 +234,7 @@ $(function(){
                     "subtotal": subtotal,
                     // "tax": "0.07",
                     "handling_fee": handling,
-                    "shipping": shipping
+                    // "shipping": shipping
                     },
                   },
                   "description": "The payment transaction description.",
