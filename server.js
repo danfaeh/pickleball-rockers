@@ -33,6 +33,11 @@ var app = express();
 app.set('views', './views');
 app.set('view engine', 'hbs');
 
+hbs.registerHelper("inc", function(value, options)
+{
+    return parseInt(value) + 1;
+});
+
 // Register Partials
 hbs.registerPartials(__dirname + '/views/partials');
 hbsutils.registerWatchedPartials(__dirname + '/views/partials'); // partial changes will restart nodemon
