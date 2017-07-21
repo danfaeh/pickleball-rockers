@@ -5,7 +5,7 @@ $('#error').hide();
 //                    Cart Updates                       //
 //*******************************************************//
 
-// updateNavItems();
+updateNavItems();
 
 function removeCartItem(item){
   localStorage.removeItem(item);
@@ -41,7 +41,7 @@ function addToCart(id,name,price,imgThumb){
 function updateNavItems(){
   var cartQuantity = 0;
   for(var lineItem in window.localStorage){
-    if(lineItem !== "key" && lineItem !== "getItem" && lineItem !== "setItem" && lineItem !== "removeItem" && lineItem !== "clear" && lineItem !== "length"){
+    if(lineItem !== "key" && lineItem !== "getItem" && lineItem !== "setItem" && lineItem !== "removeItem" && lineItem !== "clear" && lineItem !== "length" && lineItem !== "__pp_session__"){
 
       var getItem = window.localStorage.getItem(lineItem);
       var parsed = JSON.parse(getItem);
@@ -165,9 +165,8 @@ $(function(){
 
   // Check if user on cart page
   if(window.location.href.indexOf("cart") > -1){
-
     // Populate Shopping Cart Items and Totals using Local Storage
-    if(window.localStorage.length===0){
+    if(window.localStorage.length===1){
       $('#emptyCart').show();    
       $('#cartTable').hide();
     }else{
@@ -181,7 +180,10 @@ $(function(){
 
       //loop through Local Storage Cart Items and append them to the customer Cart. Also build cartItems array.
       for (var item in window.localStorage){
-        if(item !== "key" && item !== "getItem" && item !== "setItem" && item !== "removeItem" && item !== "clear" && item !== "length"){        
+
+        console.log("DANitem", item);
+
+        if(item !== "key" && item !== "getItem" && item !== "setItem" && item !== "removeItem" && item !== "clear" && item !== "length" && item !== "__pp_session__"){        
 
           itemObj = JSON.parse(window.localStorage.getItem(item));
 

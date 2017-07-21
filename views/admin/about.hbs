@@ -32,10 +32,10 @@
                             <div class="row">
                               <div class="form-group col-xs-4">
                                 <label>Image {{inc @index}}</label><br>
-                                <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{this}}" name="pic{{@index}}" size="40">
+                                <input type="text" class="group inner" placeholder="www.imgur.com/myimage" value="{{this}}" name="pic{{inc @index}}" size="40">
                               </div>      
                               
-                              <i class="fa fa-times btn btn-danger adminBtn" aria-hidden="true"></i>
+                              <i class="fa fa-times btn btn-danger adminBtn" aria-hidden="true" onclick=""></i>
                             </div>
                           {{/each}}
 
@@ -43,16 +43,16 @@
                             
                             <div class="form-group col-xs-4">
                               <label>Add a new image?</label><br>
-                              <input type="text" class="group inner" placeholder="<insert direct link here>" value="" name="" size="40">
+                              <input type="text" class="group inner" placeholder="<insert direct link here>" value="" name="picNew" size="40">
                             </div> 
 
-                            <i class="fa fa-check btn btn-success adminBtn" aria-hidden="true"></i>
+                            {{!-- <i class="fa fa-check btn btn-success adminBtn" aria-hidden="true"></i> --}}
                             {{!-- <button class="col-xs-1 btn btn-success adminBtn">Add Image</button>  --}}
 
                           </div>
 
 
-                          <button type="submit" class="btn btn-primary buttonMiddle">Update About Page</button>
+                          <button type="submit" class="btn btn-primary buttonMiddle">Update About</button>
                         </form>
                     </div>
                 </div>

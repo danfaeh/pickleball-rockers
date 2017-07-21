@@ -18,38 +18,6 @@ router.get('/admin', ensureAdmin, function(req, res){
   res.render('admin');
 });
 
-router.get('/about', function(req, res){
-  About.find({}, function(err, about) {
-      res.render('about', {about: about, aboutPics: about[0].aboutPics});    
-  });    
-});
-
-router.get('/about/admin', ensureAdmin, function(req, res){
-  About.find({}, function(err, about) {
-    res.render('admin/about', {about: about, aboutPics: about[0].aboutPics});
-  });   
-});
-
-router.post('/about', function(req, res){
-  console.log("req.body.pic1",req.body.pic1);
-  console.log("req.body",req.body);
-  About.findOneAndUpdate({id:req.body.id}, {
-    id: req.body.id,
-    title: req.body.title,
-    description: req.body.description,
-    signOff: req.body.signOff,
-    aboutPics: [req.body.pic0,req.body.pic1,req.body.pic2]
-  }, function(err, about) {
-    if (err) {
-      res.redirect('/');
-      console.log("error: " + err);
-    } else {
-      req.flash('success', 'Logo Has Been Updated');
-      res.redirect('/about/admin');
-    }
-  });
-});
-
 router.get('/cart', function(req, res){
   res.render('cart');
 });

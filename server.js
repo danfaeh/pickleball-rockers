@@ -25,6 +25,7 @@ var contact = require('./routes/contact');
 var products = require('./routes/products');
 var logos = require('./routes/logos');
 var users = require('./routes/users');
+var about = require('./routes/about');
 
 // Init App
 var app = express();
@@ -97,6 +98,7 @@ app.use('/', contact);
 app.use('/products', products);
 app.use('/logos', logos);
 app.use('/users', users);
+app.use('/about', about);
 
 // Set Port
 app.set('port', (process.env.PORT || 4000));
