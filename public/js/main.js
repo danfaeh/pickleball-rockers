@@ -8,7 +8,7 @@ $('#error').hide();
 updateNavItems();
 
 function removeCartItem(item){
-  localStorage.removeItem(item);
+  localStorage.removeItem("PBR"+item);
   updateNavItems();
   window.location.reload(false); 
 }
@@ -34,19 +34,22 @@ function addToCart(id,name,price,imgThumb){
 
   var cartItem = { 'id': id, 'name':name, 'quantity': itemQuantity, 'price':price, 'total':total, 'sex':sex, 'size':size, 'color':color, 'placement':placement, 'logo':logo, 'customLines':customLines, 'imgThumb':imgThumb};
   // Put the object into storage
-  localStorage.setItem(id, JSON.stringify(cartItem));
+  localStorage.setItem("PBR"+id, JSON.stringify(cartItem));
   updateNavItems();
 }   
 
 function updateNavItems(){
   var cartQuantity = 0;
-  for(var lineItem in window.localStorage){
-    if(lineItem !== "key" && lineItem !== "getItem" && lineItem !== "setItem" && lineItem !== "removeItem" && lineItem !== "clear" && lineItem !== "length" && lineItem !== "__pp_session__"){
 
+
+  console.log("DAN-LS",window.localStorage);
+
+  for(var lineItem in window.localStorage){
+    // if(lineItem !== "key" && lineItem !== "getItem" && lineItem !== "setItem" && lineItem !== "removeItem" && lineItem !== "clear" && lineItem !== "length" && lineItem !== "__pp_session__"){
+    if(lineItem.startsWith("PBR")){
       var getItem = window.localStorage.getItem(lineItem);
       var parsed = JSON.parse(getItem);
       var lineItemQuantity = parseInt(parsed.quantity);
-
       cartQuantity = cartQuantity + lineItemQuantity;
     }
   }
@@ -166,10 +169,13 @@ $(function(){
   // Check if user on cart page
   if(window.location.href.indexOf("cart") > -1){
     // Populate Shopping Cart Items and Totals using Local Storage
-    if(window.localStorage.length===1){
+
+    if(!Object.keys(window.localStorage).some(function(k){ return ~k.indexOf("PBR");})){
+      console.log("inside found item");
       $('#emptyCart').show();    
       $('#cartTable').hide();
     }else{
+      console.log("inside empty Cart");
       $('#emptyCart').hide();    
       $('#cartTable').show();
 
@@ -180,10 +186,9 @@ $(function(){
 
       //loop through Local Storage Cart Items and append them to the customer Cart. Also build cartItems array.
       for (var item in window.localStorage){
-
-        console.log("DANitem", item);
-
-        if(item !== "key" && item !== "getItem" && item !== "setItem" && item !== "removeItem" && item !== "clear" && item !== "length" && item !== "__pp_session__"){        
+        // if(item !== "key" && item !== "getItem" && item !== "setItem" && item !== "removeItem" && item !== "clear" && item !== "length" && item !== "__pp_session__"){        
+        if(item.startsWith("PBR")){        
+          console.log("DANitem", item);
 
           itemObj = JSON.parse(window.localStorage.getItem(item));
 
