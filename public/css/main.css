@@ -1,3 +1,13 @@
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 200%;
+  width: auto;
+  position: relative;
+  margin: -26% 0 0 0;
+}
+
 #homeBackdrop{
     height: 86vh;
     margin-top: -4em;

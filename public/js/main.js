@@ -253,11 +253,9 @@ $(function(){
                   // "soft_descriptor": "ECHI5786786",
                   "item_list": {
                     "items": paypalCartItems
-                  },
-                  "description": "test", 
-                  "note_to_payee": "test" 
+                  }
                 }
-                ]
+              ]
 
 
           });
